@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#09090b" />
+  <title>Conte-Gen · Alquiler de Contenedores · Zona Sur y Alrededores · Córdoba Capital</title>
+  <meta name="description" content="Alquiler de contenedores en Zona Sur y Alrededores de Córdoba Capital. Entrega en menos de 24hs, permisos municipales y seguros incluidos. Atención híbrida con IA + humano." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f59e0b'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Inter,Arial' font-weight='900' font-size='28' fill='%2309090b'%3ECG%3C/text%3E%3C/svg%3E" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            accent: { DEFAULT: '#f59e0b', light: '#fbbf24', dark: '#d97706' },
+            ink: { 950: '#09090b', 900: '#18181b', 800: '#27272a', 700: '#3f3f46' },
+          },
+          boxShadow: {
+            'glow-amber': '0 10px 40px -10px rgba(245, 158, 11, 0.55)',
+            'glow-amber-lg': '0 20px 60px -15px rgba(245, 158, 11, 0.65)',
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    ::selection { background: #f59e0b; color: #09090b; }
+    .bg-grid-amber {
+      background-image: linear-gradient(rgba(245, 158, 11, 0.06) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(245, 158, 11, 0.06) 1px, transparent 1px);
+      background-size: 56px 56px;
+    }
+    .bg-stripes-amber { background-image: repeating-linear-gradient(45deg, transparent, transparent 14px, rgba(245, 158, 11, 0.07) 14px, rgba(245, 158, 11, 0.07) 28px); }
+    .bg-noise { background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E"); opacity: 0.05; }
+    .bg-radial-amber { background-image: radial-gradient(ellipse 60% 50% at 80% 0%, rgba(245, 158, 11, 0.18), transparent 60%), radial-gradient(ellipse 50% 40% at 10% 100%, rgba(245, 158, 11, 0.10), transparent 60%); }
+    .text-gradient-amber { background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .text-balance { text-wrap: balance; }
+    .text-pretty { text-wrap: pretty; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s ease, transform 0.9s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; } .reveal-delay-2 { transition-delay: 0.2s; } .reveal-delay-3 { transition-delay: 0.3s; } .reveal-delay-4 { transition-delay: 0.4s; }
+    @keyframes float-y { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+    .float { animation: float-y 6s ease-in-out infinite; }
+    @keyframes pulse-ring { 0% { transform: scale(0.9); opacity: 0.7; } 80%, 100% { transform: scale(1.9); opacity: 0; } }
+    .pulse-ring::before { content: ''; position: absolute; inset: 0; border-radius: 9999px; background: #25d366; animation: pulse-ring 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite; z-index: -1; }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .marquee { animation: marquee 35s linear infinite; }
+    .marquee-pause:hover .marquee { animation-play-state: paused; }
+    .mobile-menu { transition: max-height 0.4s ease, opacity 0.3s ease; max-height: 0; overflow: hidden; opacity: 0; }
+    .mobile-menu.open { max-height: 480px; opacity: 1; }
+    .card-lift { transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease; }
+    .card-lift:hover { transform: translateY(-6px); border-color: rgba(245, 158, 11, 0.5); box-shadow: 0 20px 60px -20px rgba(245, 158, 11, 0.25); }
+    .btn-shine { position: relative; overflow: hidden; }
+    .btn-shine::after { content: ''; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.45) 50%, transparent 65%); transform: translateX(-100%); transition: transform 0.7s ease; }
+    .btn-shine:hover::after { transform: translateX(100%); }
+    .field { transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; }
+    .field:focus { border-color: #f59e0b; box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15); outline: none; }
+    .logo-slot .logo-fallback { display: none; }
+    .logo-slot .logo-img.error ~ .logo-fallback { display: flex; }
+    @keyframes shine-badge { 0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6); } 50% { box-shadow: 0 0 0 6px rgba(245, 158, 11, 0); } }
+    .badge-pulse { animation: shine-badge 2.2s ease-in-out infinite; }
+    .field-highlight { border-color: #f59e0b !important; box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.25) !important; }
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-track { background: #09090b; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 6px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+  </style>
+</head>
+<body class="bg-ink-950 text-white antialiased selection:bg-accent selection:text-ink-950">
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 text-ink-950">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-center gap-2 text-center text-[11px] sm:text-sm font-semibold tracking-wide">
+      <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+      <span>Entrega en menos de 24hs · Permisos y seguros incluidos · Únicamente Zona Sur y Alrededores de Córdoba Capital</span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-ink-950/80 backdrop-blur-xl border-b border-ink-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <a href="#top" class="flex items-center gap-3 group min-w-0">
+          <div class="logo-slot relative w-11 h-11 lg:w-12 lg:h-12 aspect-square rounded-full overflow-hidden ring-2 ring-amber-500/40 group-hover:ring-amber-500 transition-all shadow-glow-amber group-hover:scale-105 transform bg-gradient-to-br from-amber-400 to-amber-600 flex-shrink-0">
+            <img src="Conte-Gen Logo 2026.jpg" alt="Conte-Gen" class="logo-img w-full h-full object-cover" onerror="this.classList.add('error')" />
+            <div class="logo-fallback absolute inset-0 flex items-center justify-center text-ink-950 font-black text-base lg:text-lg">CG</div>
+            <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-500 rounded-full ring-2 ring-ink-950 z-10"></span>
+          </div>
+          <div class="leading-tight min-w-0">
+            <div class="font-black text-lg lg:text-xl tracking-tight">Conte-Gen</div>
+            <div class="text-[10px] lg:text-[11px] text-zinc-400 font-semibold tracking-[0.18em] uppercase whitespace-nowrap">Zona Sur y Alrededores · CBA</div>
+          </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-300">
+          <a href="#servicios" class="hover:text-amber-500 transition-colors">Servicios</a>
+          <a href="#por-que" class="hover:text-amber-500 transition-colors">Por qué nosotros</a>
+          <a href="#cotizar" class="hover:text-amber-500 transition-colors">Cotizar</a>
+          <a href="#contacto" class="hover:text-amber-500 transition-colors">Contacto</a>
+        </nav>
+        <a href="#" data-whatsapp class="btn-shine hidden sm:inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-ink-950 font-semibold text-sm px-5 py-2.5 rounded-full transition-all hover:scale-105 shadow-glow-amber">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.683 5.461l-.999 3.648 3.805-.808zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          WhatsApp
+        </a>
+        <button id="menuBtn" class="md:hidden p-2 text-zinc-300 hover:text-amber-500" aria-label="Abrir menú">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <div id="mobileMenu" class="mobile-menu md:hidden">
+        <nav class="flex flex-col py-4 gap-1 text-zinc-200 font-medium border-t border-ink-800/60">
+          <a href="#servicios" class="px-3 py-3 hover:bg-ink-900 rounded-lg">Servicios</a>
+          <a href="#por-que" class="px-3 py-3 hover:bg-ink-900 rounded-lg">Por qué nosotros</a>
+          <a href="#cotizar" class="px-3 py-3 hover:bg-ink-900 rounded-lg">Cotizar</a>
+          <a href="#contacto" class="px-3 py-3 hover:bg-ink-900 rounded-lg">Contacto</a>
+          <a href="#" data-whatsapp class="mx-3 mt-2 inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-ink-950 font-semibold px-5 py-3 rounded-full">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 1.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.683 5.461l-.999 3.648 3.805-.808zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            Escribinos por WhatsApp
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="relative overflow-hidden bg-ink-950 bg-grid-amber bg-radial-amber">
+      <div class="absolute inset-0 bg-stripes-amber opacity-50 pointer-events-none"></div>
+      <div class="absolute inset-0 bg-noise pointer-events-none"></div>
+      <div class="absolute -top-20 -right-20 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 lg:pt-20 lg:pb-28">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div class="lg:col-span-7">
+            <div class="reveal inline-flex items-center gap-2 bg-ink-900/80 border border-ink-800 rounded-full pl-2 pr-4 py-1.5 mb-6 backdrop-blur">
+              <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-amber-500/20 text-amber-500">
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+              </span>
+              <span class="text-xs sm:text-sm font-medium text-zinc-300">Zona Sur y Alrededores · Córdoba Capital</span>
+            </div>
+            <h1 class="reveal reveal-delay-1 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.05] text-balance">
+              Alquiler de <span class="text-gradient-amber">contenedores</span> en Córdoba.
+              <span class="block text-zinc-300 font-extrabold mt-2 text-3xl sm:text-4xl lg:text-5xl xl:text-5xl">Rapidez y seriedad para tu obra.</span>
+            </h1>
+            <p class="reveal reveal-delay-2 mt-6 text-base sm:text-lg lg:text-xl text-zinc-300 max-w-2xl text-pretty">
+              Entrega en menos de 24 horas, contamos con <strong class="text-white">permisos municipales</strong> y <strong class="text-white">seguros incluidos</strong>. Sin sorpresas, sin demoras. Atendemos a constructoras, empresas, consorcios y particulares.
+            </p>
+            <div class="reveal reveal-delay-3 mt-8 flex flex-col sm:flex-row gap-3">
+              <a href="#" data-whatsapp class="btn-shine inline-flex items-center justify-center gap-3 bg-amber-500 hover:bg-amber-400 text-ink-950 font-bold text-base lg:text-lg px-7 py-4 rounded-full transition-all hover:scale-[1.03] shadow-glow-amber-lg">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 1.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.683 5.461l-.999 3.648 3.805-.808zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                Solicitar contenedor por WhatsApp
+              </a>
+              <a href="#cotizar" class="inline-flex items-center justify-center gap-2 bg-ink-900/60 hover:bg-ink-900 border border-ink-800 hover:border-amber-500/50 text-white font-semibold text-base lg:text-lg px-7 py-4 rounded-full transition-all">
+                Cotizar online
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+            </div>
+            <ul class="reveal reveal-delay-4 mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-300">
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-amber-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Entrega rápida</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-amber-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Permisos y seguros incluidos</li>
+              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-amber-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Sin costos ocultos</li>
+            </ul>
+          </div>
+          <div class="lg:col-span-5 reveal reveal-delay-2">
+            <div class="relative float">
+              <div class="absolute inset-0 bg-gradient-to-tr from-amber-500/30 to-transparent rounded-3xl blur-2xl"></div>
+              <div class="relative bg-gradient-to-br from-ink-900 to-ink-800 border border-ink-700/60 rounded-3xl p-6 lg:p-8">
+                <div class="flex items-center justify-between mb-6">
+                  <div class="flex items-center gap-2"><span class="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></span><span class="text-[10px] font-bold tracking-widest text-amber-500 uppercase">Disponibilidad inmediata</span></div>
+                  <span class="text-[10px] font-mono text-zinc-500">CBA · ARG</span>
+                </div>
+                <svg class="w-full h-auto" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <ellipse cx="160" cy="180" rx="120" ry="6" fill="#000" opacity="0.4"/>
+                  <path d="M40 70 L280 70 L290 160 L30 160 Z" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+                  <path d="M40 70 L280 70 L280 80 L40 80 Z" fill="#09090b" opacity="0.3"/>
+                  <path d="M40 90 L280 90 L280 100 L40 100 Z" fill="#09090b" opacity="0.2"/>
+                  <line x1="80" y1="80" x2="76" y2="160" stroke="#09090b" stroke-width="1" opacity="0.4"/>
+                  <line x1="120" y1="80" x2="116" y2="160" stroke="#09090b" stroke-width="1" opacity="0.4"/>
+                  <line x1="160" y1="80" x2="156" y2="160" stroke="#09090b" stroke-width="1" opacity="0.4"/>
+                  <line x1="200" y1="80" x2="196" y2="160" stroke="#09090b" stroke-width="1" opacity="0.4"/>
+                  <line x1="240" y1="80" x2="236" y2="160" stroke="#09090b" stroke-width="1" opacity="0.4"/>
+                  <rect x="30" y="62" width="260" height="10" fill="#fbbf24" stroke="#d97706" stroke-width="2" rx="1"/>
+                  <line x1="80" y1="40" x2="80" y2="62" stroke="#d4d4d8" stroke-width="2"/>
+                  <line x1="240" y1="40" x2="240" y2="62" stroke="#d4d4d8" stroke-width="2"/>
+                  <rect x="60" y="160" width="30" height="14" fill="#27272a" stroke="#3f3f46" stroke-width="2" rx="2"/>
+                  <rect x="230" y="160" width="30" height="14" fill="#27272a" stroke="#3f3f46" stroke-width="2" rx="2"/>
+                  <text x="160" y="130" text-anchor="middle" fill="#09090b" font-family="Inter, sans-serif" font-weight="900" font-size="22" letter-spacing="2">CONTE-GEN</text>
+                </svg>
+                <div class="mt-6 grid grid-cols-3 gap-3 pt-6 border-t border-ink-700/60">
+                  <div><div class="text-amber-500 font-black text-xl lg:text-2xl">&lt; 24h</div><div class="text-[10px] text-zinc-400 uppercase tracking-wider mt-1">Entrega</div></div>
+                  <div><div class="text-amber-500 font-black text-xl lg:text-2xl">100%</div><div class="text-[10px] text-zinc-400 uppercase tracking-wider mt-1">Puntual</div></div>
+                  <div><div class="text-amber-500 font-black text-base lg:text-lg">Z.S+A.</div><div class="text-[10px] text-zinc-400 uppercase tracking-wider mt-1">Cobertura</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <section class="bg-ink-900 border-y border-ink-800 overflow-hidden marquee-pause" aria-label="Servicios destacados">
+      <div class="flex whitespace-nowrap py-4 marquee">
+        <div class="flex items-center gap-12 px-6 text-zinc-400 font-bold text-sm uppercase tracking-widest">
+          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Escombros</span>
+          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Poda y limpieza</span>
+          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Residuos Industriales</span>
+          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Comerciales</span>
+          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Volquetes</span>
+          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Permisos municipales</span>
+          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Seguros incluidos</span>
+          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Atención híbrida IA + humano</span>
+        </div>
+        <div class="flex items-center gap-12 px-6 text-zinc-400 font-bold text-sm uppercase tracking-widest" aria-hidden="true">
+          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Escombros</span>
+          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Poda y limpieza</span>
+          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Residuos Industriales</span>
+          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Comerciales</span>
+          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Volquetes</span>
+          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Permisos municipales</span>
+          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Seguros incluidos</span>
+          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Atención híbrida IA + humano</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="relative py-20 lg:py-28 bg-ink-950">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-14 lg:mb-20">
+          <div class="reveal inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-500 text-xs font-bold tracking-widest uppercase rounded-full px-4 py-1.5 mb-5">
+            <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Nuestros servicios
+          </div>
+          <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-balance">
+            El contenedor indicado para <span class="text-gradient-amber">cada trabajo</span>.
+          </h2>
+          <p class="reveal reveal-delay-2 mt-5 text-zinc-400 text-base lg:text-lg max-w-2xl mx-auto text-pretty">
+            Trabajamos con constructoras, empresas, consorcios y particulares. Tocá el servicio que necesitás y completá el formulario con un solo clic.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+          <article class="reveal card-lift group bg-gradient-to-br from-ink-900 to-ink-900/40 border border-ink-800 rounded-3xl p-7 lg:p-8 relative overflow-hidden">
+            <div class="absolute -top-12 -right-12 w-40 h-40 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/20 transition-colors"></div>
+            <div class="relative">
+              <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-6 group-hover:bg-amber-500/20 transition-colors">
+                <svg class="w-7 h-7 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6M9 12h.01M15 12h.01"/></svg>
+              </div>
+              <h3 class="text-xl lg:text-2xl font-bold mb-3">Residuos de obra<br/><span class="text-amber-500">/ Escombros</span></h3>
+              <p class="text-zinc-400 text-sm lg:text-base leading-relaxed mb-6">Ideal para construcciones, refacciones y demoliciones. Contenedores reforzados para mampostería, hormigón, cerámicos y chatarra.</p>
+              <a href="#cotizar" data-service="Escombros" class="inline-flex items-center gap-1.5 text-amber-500 font-semibold text-sm group-hover:gap-3 transition-all cursor-pointer">
+                Consultar por este servicio
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+            </div>
+          </article>
+          <article class="reveal reveal-delay-1 card-lift group bg-gradient-to-br from-ink-900 to-ink-900/40 border border-ink-800 rounded-3xl p-7 lg:p-8 relative overflow-hidden">
+            <div class="absolute -top-12 -right-12 w-40 h-40 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/20 transition-colors"></div>
+            <div class="relative">
+              <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-6 group-hover:bg-amber-500/20 transition-colors">
+                <svg class="w-7 h-7 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 019.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6M19 21c0-3-1.85-5.36-5.08-6"/></svg>
+              </div>
+              <h3 class="text-xl lg:text-2xl font-bold mb-3">Limpieza de terrenos<br/><span class="text-amber-500">/ Poda</span></h3>
+              <p class="text-zinc-400 text-sm lg:text-base leading-relaxed mb-6">Perfecto para desmalezado, poda de árboles, limpieza de patios y terrenos. Retiramos restos verdes y voluminosos en el día.</p>
+              <a href="#cotizar" data-service="Poda" class="inline-flex items-center gap-1.5 text-amber-500 font-semibold text-sm group-hover:gap-3 transition-all cursor-pointer">
+                Consultar por este servicio
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+            </div>
+          </article>
+          <article class="reveal reveal-delay-2 card-lift group bg-gradient-to-br from-ink-900 to-ink-900/40 border-2 border-amber-500/40 rounded-3xl p-7 lg:p-8 relative overflow-hidden">
+            <div class="absolute top-5 right-5 z-10">
+              <div class="badge-pulse flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-amber-400 text-ink-950 text-[10px] font-black tracking-widest uppercase px-3 py-1.5 rounded-full shadow-glow-amber">
+                <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4-6.5 4 2-7L2 9h7z"/></svg>
+                ¡Promo / Descuento!
+              </div>
+            </div>
+            <div class="absolute -top-12 -right-12 w-40 h-40 bg-amber-500/15 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-colors"></div>
+            <div class="relative">
+              <div class="w-14 h-14 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center mb-6 group-hover:bg-amber-500/25 transition-colors">
+                <svg class="w-7 h-7 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V8l5 3V8l5 3V8l5 3v9M8 14v.01M12 14v.01M16 14v.01"/></svg>
+              </div>
+              <h3 class="text-xl lg:text-2xl font-bold mb-3">Residuos Industriales<br/><span class="text-amber-500">/ Comerciales</span></h3>
+              <p class="text-zinc-400 text-sm lg:text-base leading-relaxed mb-6">Las industrias acceden a <strong class="text-white">tarifas preferenciales</strong> gracias a nuestro sistema de <strong class="text-white">economía circular</strong> eso se traduce en mejores precios para vos.</p>
+              <a href="#cotizar" data-service="Residuos Industriales" class="inline-flex items-center gap-1.5 text-amber-500 font-semibold text-sm group-hover:gap-3 transition-all cursor-pointer">
+                Solicitar descuento industrial
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- POR QUÉ -->
+    <section id="por-que" class="relative py-20 lg:py-28 bg-ink-900 border-y border-ink-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-5">
+            <div class="reveal inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-500 text-xs font-bold tracking-widest uppercase rounded-full px-4 py-1.5 mb-5">
+              <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Por qué elegirnos
+            </div>
+            <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-balance">
+              En una obra, <span class="text-gradient-amber">el tiempo es dinero</span>. Y lo respetamos.
+            </h2>
+            <p class="reveal reveal-delay-2 mt-5 text-zinc-300 text-base lg:text-lg text-pretty">
+              Detrás de Conte-Gen hay un equipo local que conoce la Zona Sur y Alrededores de Córdoba y sus tiempos. Por eso llegamos cuando decimos que vamos a llegar.
+            </p>
+          </div>
+          <div class="lg:col-span-7 grid sm:grid-cols-2 gap-5">
+            <div class="reveal card-lift bg-ink-950 border border-ink-800 rounded-2xl p-6">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <h3 class="text-lg font-bold mb-2">Entrega y retiro en menos de 24hs</h3>
+              <p class="text-zinc-400 text-sm leading-relaxed">Coordinamos la entrega y el retiro del contenedor en plazos cortos. Tu obra no se frena.</p>
+            </div>
+            <div class="reveal reveal-delay-1 card-lift bg-ink-950 border border-ink-800 rounded-2xl p-6">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+              </div>
+              <h3 class="text-lg font-bold mb-2">Permisos municipales gestionados</h3>
+              <p class="text-zinc-400 text-sm leading-relaxed">Nos encargamos de los trámites en la Municipalidad de Córdoba. Vos te ocupás de la obra.</p>
+            </div>
+            <div class="reveal reveal-delay-2 card-lift bg-ink-950 border border-ink-800 rounded-2xl p-6">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="11" height="10" rx="2"/><path d="M8.5 5v3"/><circle cx="6.2" cy="13" r="1" fill="currentColor"/><circle cx="10.8" cy="13" r="1" fill="currentColor"/><line x1="5.7" y1="15.8" x2="11.3" y2="15.8"/><path d="M14.5 13h3"/><path d="M16 11.5l1.5 1.5-1.5 1.5"/><circle cx="20" cy="11" r="1.3"/><path d="M18 14.2c0-.9.7-1.7 1.7-1.7h.6c1 0 1.7.8 1.7 1.7V16"/></svg>
+              </div>
+              <h3 class="text-lg font-bold mb-2">Atención Híbrida Inmediata</h3>
+              <p class="text-zinc-400 text-sm leading-relaxed">Un <strong class="text-zinc-200">asistente virtual con IA</strong> procesa tu pedido al instante y, en segundos, pasa a un <strong class="text-zinc-200">asesor humano real</strong> que coordina la entrega. Velocidad sin perder el trato personal.</p>
+            </div>
+            <div class="reveal reveal-delay-3 card-lift bg-ink-950 border border-ink-800 rounded-2xl p-6">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              </div>
+              <h3 class="text-lg font-bold mb-2">Cuidado de la vía pública</h3>
+              <p class="text-zinc-400 text-sm leading-relaxed">Trabajamos con seriedad: señalización, cuidado del frente y retiro prolijo. Cuidamos Córdoba como si fuera nuestra casa.</p>
+            </div>
+            <div class="reveal reveal-delay-4 sm:col-span-2 card-lift relative bg-gradient-to-r from-amber-500/15 via-amber-500/10 to-amber-500/5 border-2 border-amber-500/40 rounded-2xl p-6 lg:p-7 overflow-hidden">
+              <div class="absolute -right-10 -top-10 w-48 h-48 bg-amber-500/15 rounded-full blur-3xl"></div>
+              <div class="relative flex flex-col sm:flex-row items-start sm:items-center gap-5">
+                <div class="w-14 h-14 rounded-2xl bg-amber-500 flex items-center justify-center flex-shrink-0 shadow-glow-amber">
+                  <svg class="w-7 h-7 text-ink-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-1.5 flex-wrap">
+                    <span class="text-[10px] font-black tracking-widest text-amber-500 uppercase">★ Destacado</span>
+                    <span class="text-amber-500/40">·</span>
+                    <span class="text-[10px] font-bold tracking-widest text-zinc-400 uppercase">Tranquilidad total</span>
+                  </div>
+                  <h3 class="text-lg lg:text-xl font-bold mb-1.5 text-white">Seguros Incluidos</h3>
+                  <p class="text-zinc-300 text-sm leading-relaxed">Cobertura total en vía pública y obra. Trabajás tranquilo sabiendo que tu Contenedor esta protegido ante cualquier eventualidad, sin costo extra.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REDES -->
+    <section class="relative py-20 lg:py-28 bg-ink-950 overflow-hidden">
+      <div class="absolute inset-0 bg-grid-amber opacity-40 pointer-events-none"></div>
+      <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="reveal relative bg-gradient-to-br from-ink-900 via-ink-900 to-ink-800 border border-ink-800 rounded-3xl lg:rounded-[2.5rem] p-8 sm:p-10 lg:p-16 overflow-hidden">
+          <div class="absolute -top-20 -left-20 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-20 -right-20 w-72 h-72 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="relative grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-500 text-xs font-bold tracking-widest uppercase rounded-full px-4 py-1.5 mb-5">
+                <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span></span>
+                Renovando redes
+              </div>
+              <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-balance">¡Estamos <span class="text-gradient-amber">renovando</span> nuestras redes!</h2>
+              <p class="mt-5 text-zinc-300 text-base lg:text-lg text-pretty max-w-lg">Seguinos para ver nuestro servicio en acción: entregas, retiros, obras reales y todo lo que aprendemos día a día en la calle.</p>
+              <div class="mt-8 flex flex-col sm:flex-row gap-3">
+                <a href="#" data-instagram class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-fuchsia-600 via-pink-600 to-amber-500 hover:opacity-90 text-white font-semibold px-6 py-3 rounded-full transition-all hover:scale-105">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                  Seguir a @conte_gen
+                </a>
+                <a href="#" data-facebook class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-full transition-all hover:scale-105">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  Seguir en Facebook
+                </a>
+              </div>
+            </div>
+            <div class="grid grid-cols-3 gap-3 max-w-md mx-auto lg:ml-auto">
+              <div class="aspect-square rounded-xl bg-gradient-to-br from-amber-500/20 to-amber-500/5 border border-amber-500/20 flex items-center justify-center text-amber-500 text-2xl">🏗️</div>
+              <div class="aspect-square rounded-xl bg-gradient-to-br from-ink-800 to-ink-900 border border-ink-700 flex items-center justify-center text-3xl">🚛</div>
+              <div class="aspect-square rounded-xl bg-gradient-to-br from-amber-500/20 to-amber-500/5 border border-amber-500/20 flex items-center justify-center text-2xl">📦</div>
+              <div class="aspect-square rounded-xl bg-gradient-to-br from-ink-800 to-ink-900 border border-ink-700 flex items-center justify-center text-3xl">🏠</div>
+              <div class="aspect-square rounded-xl bg-gradient-to-br from-amber-500/30 to-amber-500/10 border border-amber-500/30 flex items-center justify-center">
+                <svg class="w-10 h-10 text-amber-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </div>
+              <div class="aspect-square rounded-xl bg-gradient-to-br from-ink-800 to-ink-900 border border-ink-700 flex items-center justify-center text-3xl">🌿</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULARIO + CONTACTO -->
+    <section id="cotizar" class="relative py-20 lg:py-28 bg-ink-950 scroll-mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
+          <div class="reveal inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-500 text-xs font-bold tracking-widest uppercase rounded-full px-4 py-1.5 mb-5">
+            <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Cotizá en 30 segundos
+          </div>
+          <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-balance">
+            Pedí tu <span class="text-gradient-amber">cotización</span> ahora.
+          </h2>
+          <p class="reveal reveal-delay-2 mt-5 text-zinc-300 text-base lg:text-lg text-pretty">
+            Completá el formulario y te respondemos por WhatsApp con precio y disponibilidad. Sin compromiso.
+          </p>
+        </div>
+        <div class="grid lg:grid-cols-5 gap-8">
+          <form id="quoteForm" class="reveal lg:col-span-3 bg-gradient-to-br from-ink-900 to-ink-900/40 border border-ink-800 rounded-3xl p-6 sm:p-8 lg:p-10 space-y-5">
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="nombre" class="block text-sm font-semibold text-zinc-300 mb-2">Nombre y apellido</label>
+                <input type="text" id="nombre" name="nombre" required autocomplete="name" class="field w-full bg-ink-950 border border-ink-800 rounded-xl px-4 py-3 text-white placeholder-zinc-600" placeholder="Ej: Juan Pérez" />
+              </div>
+              <div>
+                <label for="telefono" class="block text-sm font-semibold text-zinc-300 mb-2">Teléfono / WhatsApp</label>
+                <input type="text" id="telefono" name="telefono" required inputmode="tel" autocomplete="tel" class="field w-full bg-ink-950 border border-ink-800 rounded-xl px-4 py-3 text-white placeholder-zinc-600" placeholder="Ej: 351 555 1234" />
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="barrio" class="block text-sm font-semibold text-zinc-300 mb-2">Barrio</label>
+                <input type="text" id="barrio" name="barrio" required class="field w-full bg-ink-950 border border-ink-800 rounded-xl px-4 py-3 text-white placeholder-zinc-600" placeholder="Escribí tu barrio" />
+              </div>
+              <div>
+                <label for="ubicacion" class="block text-sm font-semibold text-zinc-300 mb-2">Ubicación / Dirección exacta <span class="text-zinc-500 font-normal text-xs">(para la entrega)</span></label>
+                <input type="text" id="ubicacion" name="ubicacion" required class="field w-full bg-ink-950 border border-ink-800 rounded-xl px-4 py-3 text-white placeholder-zinc-600" placeholder="Calle, número, referencias" />
+              </div>
+            </div>
+            <div>
+              <label for="tipo" class="block text-sm font-semibold text-zinc-300 mb-2">
+                Tipo de contenedor / residuo
+                <span class="text-amber-500/90 font-medium text-xs">(Descuento especial para residuos industriales)</span>
+              </label>
+              <select id="tipo" name="tipo" required class="field w-full bg-ink-950 border border-ink-800 rounded-xl px-4 py-3 text-white">
+                <option value="" disabled selected>¿Qué necesitás?</option>
+                <option>Escombros</option>
+                <option>Poda</option>
+                <option>Residuos Industriales</option>
+                <option>Residuos Comerciales</option>
+                <option>Mezcla</option>
+              </select>
+            </div>
+            <div>
+              <label for="mensaje" class="block text-sm font-semibold text-zinc-300 mb-2">Comentarios <span class="text-zinc-500 font-normal">(opcional)</span></label>
+              <textarea id="mensaje" name="mensaje" rows="3" class="field w-full bg-ink-950 border border-ink-800 rounded-xl px-4 py-3 text-white placeholder-zinc-600 resize-none" placeholder="Contanos brevemente: volumen estimado, fecha probable, observaciones..."></textarea>
+            </div>
+            <button type="submit" class="btn-shine w-full inline-flex items-center justify-center gap-3 bg-amber-500 hover:bg-amber-400 text-ink-950 font-bold text-base lg:text-lg px-6 py-4 rounded-full transition-all hover:scale-[1.01] shadow-glow-amber-lg">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 1.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.683 5.461l-.999 3.648 3.805-.808zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              Enviar por WhatsApp
+            </button>
+            <div class="flex items-start gap-2 bg-amber-500/8 border border-amber-500/25 rounded-xl p-3.5">
+              <svg class="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+              <p class="text-xs text-zinc-300 leading-relaxed"><strong class="text-amber-500">Importante:</strong> operamos únicamente en <strong class="text-white">Zona Sur y Alrededores de Córdoba Capital</strong>. Al enviar, se abrirá WhatsApp con tu mensaje listo. No almacenamos ningún dato.</p>
+            </div>
+          </form>
+          <aside id="contacto" class="lg:col-span-2 space-y-5">
+            <div class="reveal card-lift bg-ink-900 border border-ink-800 rounded-3xl p-6">
+              <div class="flex items-start gap-4">
+                <div class="w-11 h-11 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <div class="text-xs font-bold tracking-widest text-amber-500 uppercase mb-1">WhatsApp Business</div>
+                  <a href="#" data-whatsapp class="text-white font-bold text-lg hover:text-amber-500 transition-colors block">+54 9 351 718 1817</a>
+                  <p class="text-zinc-500 text-xs mt-0.5">Respondemos en minutos</p>
+                  <div class="mt-3 pt-3 border-t border-ink-800/80">
+                    <div class="text-[10px] font-bold tracking-widest text-zinc-500 uppercase mb-1">Línea de respaldo</div>
+                    <a href="https://wa.me/5493515070676" target="_blank" rel="noopener" class="text-zinc-300 hover:text-amber-500 text-sm font-semibold transition-colors">+54 9 351 507 0676</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="reveal reveal-delay-1 card-lift bg-ink-900 border border-ink-800 rounded-3xl p-6">
+              <div class="flex items-start gap-4">
+                <div class="w-11 h-11 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <div class="text-xs font-bold tracking-widest text-amber-500 uppercase mb-1">Email</div>
+                  <a href="mailto:contacto@conte-gen.com.ar" class="text-white font-semibold hover:text-amber-500 transition-colors block truncate">contacto@conte-gen.com.ar</a>
+                </div>
+              </div>
+            </div>
+            <div class="reveal reveal-delay-2 card-lift bg-ink-900 border border-ink-800 rounded-3xl p-6">
+              <div class="flex items-start gap-4">
+                <div class="w-11 h-11 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <div class="text-xs font-bold tracking-widest text-amber-500 uppercase mb-1">Dirección</div>
+                  <div class="text-white font-semibold leading-tight">Villa Ballester 4063</div>
+                  <div class="text-zinc-400 text-sm">Barrio Carrara</div>
+                  <div class="mt-3 inline-flex items-center gap-1.5 bg-amber-500/10 border border-amber-500/30 rounded-full px-2.5 py-1">
+                    <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>
+                    <span class="text-amber-500 text-[10px] font-black tracking-widest uppercase">Operamos únicamente en Zona Sur y Alrededores</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="reveal reveal-delay-3 card-lift bg-ink-900 border border-ink-800 rounded-3xl p-6">
+              <div class="flex items-start gap-4">
+                <div class="w-11 h-11 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div>
+                  <div class="text-xs font-bold tracking-widest text-amber-500 uppercase mb-1">Horarios</div>
+                  <div class="text-white font-semibold text-sm">Lun a Vie · 8 a 18 hs</div>
+                  <div class="text-zinc-400 text-sm">Sáb · 8 a 13 hs</div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-ink-900 border-t border-ink-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div class="grid md:grid-cols-12 gap-8">
+        <div class="md:col-span-5">
+          <a href="#top" class="inline-flex items-center gap-3 mb-4 group">
+            <div class="logo-slot relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-amber-500/40 group-hover:ring-amber-500 transition-all shadow-glow-amber group-hover:scale-105 transform bg-gradient-to-br from-amber-400 to-amber-600">
+              <img src="Conte-Gen Logo 2026.jpg" alt="Conte-Gen" class="logo-img w-full h-full object-cover" onerror="this.classList.add('error')" />
+              <div class="logo-fallback absolute inset-0 flex items-center justify-center text-ink-950 font-black text-base">CG</div>
+            </div>
+            <div class="leading-tight">
+              <div class="font-black text-xl">Conte-Gen</div>
+              <div class="text-[10px] text-zinc-400 font-semibold tracking-[0.18em] uppercase">Zona Sur y Alrededores · CBA</div>
+            </div>
+          </a>
+          <p class="text-zinc-400 text-sm leading-relaxed max-w-sm">
+            Alquiler de contenedores para obras, limpieza e industria en Córdoba Capital. Seriedad, puntualidad, permisos municipales y seguros incluidos.
+          </p>
+          <div class="mt-5 inline-flex items-start gap-2.5 bg-ink-800/60 border border-ink-700 rounded-xl p-3 max-w-sm">
+            <svg class="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <div class="text-[10px] font-black tracking-widest text-amber-500 uppercase mb-0.5">Dirección</div>
+              <div class="text-zinc-300 text-sm leading-snug">Villa Ballester 4063, Barrio Carrara</div>
+            </div>
+          </div>
+          <div class="mt-6 flex items-center gap-3">
+            <a href="#" data-instagram aria-label="Instagram" class="w-10 h-10 rounded-full bg-ink-800 hover:bg-gradient-to-br hover:from-fuchsia-600 hover:via-pink-600 hover:to-amber-500 flex items-center justify-center text-zinc-400 hover:text-white transition-all">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" data-facebook aria-label="Facebook" class="w-10 h-10 rounded-full bg-ink-800 hover:bg-blue-600 flex items-center justify-center text-zinc-400 hover:text-white transition-all">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" data-whatsapp aria-label="WhatsApp" class="w-10 h-10 rounded-full bg-ink-800 hover:bg-emerald-500 flex items-center justify-center text-zinc-400 hover:text-white transition-all">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 1.9 0 01-5.688-1.448L.057 24z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="md:col-span-3">
+          <h4 class="font-bold text-sm tracking-widest uppercase text-amber-500 mb-4">Navegación</h4>
+          <ul class="space-y-2.5 text-zinc-300 text-sm">
+            <li><a href="#servicios" class="hover:text-amber-500 transition-colors">Servicios</a></li>
+            <li><a href="#por-que" class="hover:text-amber-500 transition-colors">Por qué nosotros</a></li>
+            <li><a href="#cotizar" class="hover:text-amber-500 transition-colors">Cotizar</a></li>
+            <li><a href="#contacto" class="hover:text-amber-500 transition-colors">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-4">
+          <h4 class="font-bold text-sm tracking-widest uppercase text-amber-500 mb-4">Zona de cobertura</h4>
+          <div class="bg-gradient-to-br from-amber-500/15 to-amber-500/5 border-2 border-amber-500/50 rounded-2xl p-4 mb-5 relative overflow-hidden">
+            <div class="absolute -right-6 -top-6 w-24 h-24 bg-amber-500/15 rounded-full blur-2xl"></div>
+            <div class="relative flex items-start gap-3">
+              <div class="w-9 h-9 rounded-xl bg-amber-500 flex items-center justify-center flex-shrink-0 shadow-glow-amber">
+                <svg class="w-5 h-5 text-ink-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="text-amber-500 font-black text-sm uppercase tracking-wider">Únicamente Zona Sur y Alrededores</div>
+                <p class="text-zinc-300 text-xs mt-1 leading-snug">Por logística, operamos <strong class="text-white">exclusivamente</strong> en la Zona Sur y Alrededores de Córdoba Capital.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-ink-800/60 border border-ink-700 rounded-xl p-4">
+            <p class="text-zinc-300 text-sm leading-relaxed flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Universitario de horizonte, Docta, Villa Libertador, Alto alberdi, Coronel Olmedo, Jose Ignacio Diaz y Barrio Carrara + zonas aledañas.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 pt-6 border-t border-ink-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-500">
+        <div>© <span id="year">2026</span> Conte-Gen · Alquiler de contenedores · Zona Sur y Alrededores, Córdoba Capital, Argentina</div>
+        <div class="flex items-center gap-4"><span>Hecho con ⚡ en Córdoba</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOTANTE -->
+  <a href="#" data-whatsapp aria-label="Contactar por WhatsApp" class="fixed bottom-5 right-5 z-40 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-2xl shadow-emerald-500/30 transition-transform hover:scale-110 pulse-ring">
+    <svg class="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 1.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.683 5.461l-.999 3.648 3.805-.808zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
+
+  <!-- SCRIPT -->
+  <script>
+    const CONFIG = {
+      whatsappNumber: '5493517181817',
+      whatsappDefaultMessage: 'Hola Conte-Gen, necesito un contenedor. ¿Me pasás info y disponibilidad?',
+      instagramUrl: 'https://instagram.com/conte_gen',
+      facebookUrl: 'https://facebook.com/',
+      contactEmail: 'contacto@conte-gen.com.ar',
+    };
+
+    const waLink = (msg = CONFIG.whatsappDefaultMessage) =>
+      `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(msg)}`;
+
+    document.querySelectorAll('[data-whatsapp]').forEach(el => el.href = waLink());
+    document.querySelectorAll('[data-instagram]').forEach(el => el.href = CONFIG.instagramUrl);
+    document.querySelectorAll('[data-facebook]').forEach(el => el.href = CONFIG.facebookUrl);
+
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+    const form = document.getElementById('quoteForm');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const nombre    = (data.get('nombre')    || '').toString().trim();
+      const telefono  = (data.get('telefono')  || '').toString().trim();
+      const barrio    = (data.get('barrio')    || '').toString().trim();
+      const ubicacion = (data.get('ubicacion') || '').toString().trim();
+      const tipo      = (data.get('tipo')      || '').toString().trim();
+      const mensaje   = (data.get('mensaje')   || '').toString().trim();
+      const text = [
+        '¡Hola Conte-Gen! Quiero cotizar un contenedor.',
+        '',
+        `• Nombre: ${nombre}`,
+        `• Teléfono / WhatsApp: ${telefono}`,
+        `• Barrio: ${barrio}`,
+        `• Ubicación / Dirección: ${ubicacion}`,
+        `• Tipo de contenedor: ${tipo}`,
+        mensaje ? `• Comentarios: ${mensaje}` : '',
+      ].filter(Boolean).join('\n');
+      window.open(waLink(text), '_blank', 'noopener');
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    /* =========================================================
+       SERVICE CARDS → AUTOFILL DEL FORMULARIO + SMOOTH SCROLL
+       ========================================================= */
+    document.querySelectorAll('[data-service]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const value = btn.getAttribute('data-service');
+        const tipoSelect = document.getElementById('tipo');
+        const cotizarSection = document.getElementById('cotizar');
+        const nombreField = document.getElementById('nombre');
+
+        if (tipoSelect) {
+          tipoSelect.value = value;
+          tipoSelect.classList.add('field-highlight');
+          setTimeout(() => tipoSelect.classList.remove('field-highlight'), 2200);
+        }
+        if (cotizarSection) {
+          cotizarSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        setTimeout(() => {
+          if (nombreField && !nombreField.value) nombreField.focus({ preventScroll: true });
+        }, 700);
+      });
+    });
+  </script>
+</body>
+</html>
