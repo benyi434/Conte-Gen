@@ -1,743 +1,713 @@
 <!DOCTYPE html>
-<html lang="es-AR">
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#09090b" />
-
-  <title>Conte-Gen · Alquiler de Contenedores · Zona Sur y Alrededores · Córdoba Capital</title>
-
-  <meta name="description" content="Alquiler de contenedores en Zona Sur y Alrededores de Córdoba Capital. Entrega en menos de 24hs, permisos municipales y seguros incluidos. Atención híbrida con IA + humano." />
-
-  <!-- Nuevo favicon -->
-  <link rel="icon" type="image/png" href="logo.png">
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Conte-Gen | Alquiler de Contenedores y Volquetes en Córdoba</title>
-    
-    <meta name="description" content="Alquiler de contenedores y volquetes en Córdoba para obras, limpieza y escombros. Servicio rápido, económico y eficiente. ¡Contactanos!">
-    
-    <meta name="keywords" content="contenedores, alquiler de contenedores, alquiler volquetes, contenedores cordoba, volquetes cordoba, conte-gen">
-    
-    <meta name="geo.region" content="AR-X" />
-    <meta name="geo.placename" content="Córdoba" />
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
-          colors: {
-            accent: { DEFAULT: '#f59e0b', light: '#fbbf24', dark: '#d97706' },
-            ink: { 950: '#09090b', 900: '#18181b', 800: '#27272a', 700: '#3f3f46' },
-          },
-          boxShadow: {
-            'glow-amber': '0 10px 40px -10px rgba(245, 158, 11, 0.55)',
-            'glow-amber-lg': '0 20px 60px -15px rgba(245, 158, 11, 0.65)',
-          },
-        },
-      },
-    }
-  </script>
-  <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
-    ::selection { background: #f59e0b; color: #09090b; }
-    .bg-grid-amber { background-image: linear-gradient(rgba(245, 158, 11, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(245, 158, 11, 0.06) 1px, transparent 1px); background-size: 56px 56px; }
-    .bg-stripes-amber { background-image: repeating-linear-gradient(45deg, transparent, transparent 14px, rgba(245, 158, 11, 0.07) 14px, rgba(245, 158, 11, 0.07) 28px); }
-    .bg-noise { background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E"); opacity: 0.05; }
-    .bg-radial-amber { background-image: radial-gradient(ellipse 60% 50% at 80% 0%, rgba(245, 158, 11, 0.18), transparent 60%), radial-gradient(ellipse 50% 40% at 10% 100%, rgba(245, 158, 11, 0.10), transparent 60%); }
-    .text-gradient-amber { background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .text-balance { text-wrap: balance; } .text-pretty { text-wrap: pretty; }
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s ease, transform 0.9s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; } .reveal-delay-2 { transition-delay: 0.2s; } .reveal-delay-3 { transition-delay: 0.3s; } .reveal-delay-4 { transition-delay: 0.4s; }
-    @keyframes float-y { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-    .float { animation: float-y 6s ease-in-out infinite; }
-    @keyframes pulse-ring { 0% { transform: scale(0.9); opacity: 0.7; } 80%, 100% { transform: scale(1.9); opacity: 0; } }
-    .pulse-ring::before { content: ''; position: absolute; inset: 0; border-radius: 9999px; background: #25d366; animation: pulse-ring 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite; z-index: -1; }
-    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    .marquee { animation: marquee 35s linear infinite; }
-    .marquee-pause:hover .marquee { animation-play-state: paused; }
-    .mobile-menu { transition: max-height 0.4s ease, opacity 0.3s ease; max-height: 0; overflow: hidden; opacity: 0; }
-    .mobile-menu.open { max-height: 480px; opacity: 1; }
-    .card-lift { transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease; }
-    .card-lift:hover { transform: translateY(-6px); border-color: rgba(245, 158, 11, 0.5); box-shadow: 0 20px 60px -20px rgba(245, 158, 11, 0.25); }
-    .btn-shine { position: relative; overflow: hidden; }
-    .btn-shine::after { content: ''; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.45) 50%, transparent 65%); transform: translateX(-100%); transition: transform 0.7s ease; }
-    .btn-shine:hover::after { transform: translateX(100%); }
-    .field { transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; }
-    .field:focus { border-color: #f59e0b; box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15); outline: none; }
-    .logo-slot .logo-fallback { display: none; }
-    .logo-slot .logo-img.error ~ .logo-fallback { display: flex; }
-    @keyframes shine-badge { 0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6); } 50% { box-shadow: 0 0 0 6px rgba(245, 158, 11, 0); } }
-    .badge-pulse { animation: shine-badge 2.2s ease-in-out infinite; }
-    .field-highlight { border-color: #f59e0b !important; box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.25) !important; }
-    /* Imagen del Hero: calado limpio + hover float + glow */
-    .hero-image-mask { mask-image: linear-gradient(to bottom, #000 90%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, #000 90%, transparent 100%); }
-    /* TikTok chromatic accent (efecto sutil de marca) */
-    .tiktok-bg { background: linear-gradient(135deg, #000 0%, #1a1a1a 100%); position: relative; }
-    .tiktok-bg::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(45deg, rgba(37, 244, 238, 0.15), transparent 50%, rgba(254, 44, 85, 0.15) 100%); pointer-events: none; }
-    ::-webkit-scrollbar { width: 10px; height: 10px; }
-    ::-webkit-scrollbar-track { background: #09090b; }
-    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 6px; }
-    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0f1114">
+<title>Configurador de mesa de pino</title>
+<style>
+:root{--bg:#0f1114;--panel:#16191e;--ink:#eceae4;--mute:#8d939b;--line:#272b33;--acc:#d9b67a;--acc2:#1d2127;--warn:#e7a04f;--alert:#e5604f;--ok:#84c39a;--sh:0 12px 32px rgba(0,0,0,.35)}
+body.light{--bg:#eeece7;--panel:#fff;--ink:#1d1d1b;--mute:#6f6d67;--line:#e3e0d8;--acc:#8a6a34;--acc2:#f4f1ea;--warn:#b86a1f;--alert:#b3402e;--ok:#3d7a52;--sh:0 12px 32px rgba(0,0,0,.08)}
+*{box-sizing:border-box}
+body{margin:0;font:14px/1.5 Inter,system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);display:grid;grid-template-columns:1fr 390px;height:100vh;overflow:hidden;transition:background .4s,color .4s}
+#view{position:relative;min-height:320px;overflow:hidden}
+#view canvas{display:block;width:100%;height:100%;touch-action:none}
+#bar{position:absolute;left:12px;top:12px;display:flex;gap:6px}
+.btn{font:inherit;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer;transition:all .25s;box-shadow:var(--sh)}
+.btn:hover{border-color:var(--acc)}
+#card{position:absolute;left:12px;top:60px;width:310px;max-width:calc(100% - 24px);max-height:calc(100% - 90px);overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:var(--sh);animation:fade .3s ease}
+#card h4{margin:0 0 6px;font-size:14px}#card p{margin:6px 0;font-size:12.5px}
+#card svg{width:100%;height:auto;margin:6px 0}
+#card svg text{fill:var(--mute);font-size:11px}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+#hud{position:absolute;left:12px;bottom:12px;font-size:12px;color:var(--mute);background:var(--panel);padding:6px 10px;border-radius:8px;border:1px solid var(--line)}
+#tip{position:absolute;right:12px;bottom:14px;font-size:12px;color:var(--mute);text-align:right;max-width:60%}
+#panel{background:var(--panel);border-left:1px solid var(--line);overflow:auto;padding:14px 18px 40px}
+nav.tabs{display:flex;gap:2px;border-bottom:1px solid var(--line);margin-bottom:10px;flex-wrap:wrap}
+nav.tabs button{background:none;border:0;color:var(--mute);font:inherit;padding:8px 7px;cursor:pointer;border-bottom:2px solid transparent;transition:all .25s}
+nav.tabs button.on{color:var(--ink);border-bottom-color:var(--acc)}
+section[data-pane]{animation:fade .35s ease}
+[hidden]{display:none!important}
+h3{font-size:12px;font-weight:600;color:var(--mute);margin:16px 0 6px}
+details{border-top:1px solid var(--line);padding:6px 0}
+details summary{cursor:pointer;font-weight:600;font-size:13px;padding:4px 0;list-style:none}
+details summary::before{content:"▸ ";color:var(--acc)}
+details[open] summary::before{content:"▾ "}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.seg button{text-align:left;padding:7px 9px;border:1px solid var(--line);border-radius:10px;background:var(--acc2);color:var(--ink);font:inherit;font-size:12.5px;cursor:pointer;transition:all .25s}
+.seg button.on{border-color:var(--acc);box-shadow:inset 0 0 0 1px var(--acc)}
+.seg small{display:block;color:var(--mute);font-size:11px;line-height:1.3}
+label.r{display:block;margin:9px 0}
+label.r span{display:flex;justify-content:space-between;font-size:12px;color:var(--mute)}
+label.r b{color:var(--ink);font-weight:500}
+input[type=range]{width:100%;accent-color:var(--acc)}
+input[type=number],input[type=text],select{width:100%;padding:6px 8px;border:1px solid var(--line);border-radius:8px;font:inherit;background:var(--acc2);color:var(--ink)}
+label.c{display:flex;gap:8px;align-items:center;margin:6px 0;font-size:13px;cursor:pointer}
+.adv{padding:8px 10px;border-radius:10px;margin:6px 0;font-size:12.5px;border-left:3px solid var(--mute);background:var(--acc2);animation:fade .4s}
+.adv.alta{border-color:var(--alert)}.adv.media{border-color:var(--warn)}.adv.ok{border-color:var(--ok)}
+.ev{padding:9px 0;border-bottom:1px solid var(--line)}
+.ev b{font-weight:600;font-size:13px}.ev em{font-style:normal;font-size:12px;color:var(--acc);display:block}.ev small{color:var(--mute);font-size:12px}
+table{width:100%;border-collapse:collapse;font-size:12px;margin-top:4px}
+td,th{padding:5px 4px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:var(--mute);font-weight:500}
+tr.cur td{color:var(--acc)}
+.muted{color:var(--mute);font-size:12px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:6px 0}
+.steps{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.steps .btn{padding:5px 10px;font-size:12px}
+dialog{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:18px;width:min(400px,92vw);max-height:85vh;overflow:auto;box-shadow:var(--sh)}
+dialog::backdrop{background:rgba(0,0,0,.45)}
+@media (max-width:760px){
+  body{grid-template-columns:1fr;grid-template-rows:auto auto;height:auto;min-height:100dvh;overflow:auto}
+  #view{height:60dvh;min-height:300px}
+  #bar{top:calc(8px + env(safe-area-inset-top));left:8px;right:8px;overflow-x:auto;scrollbar-width:none}
+  #bar .btn{white-space:nowrap;min-height:40px;padding:8px 14px}
+  #hud{left:8px;bottom:8px;font-size:11px}
+  #tip{display:none}
+  #card{left:8px;right:8px;top:56px;width:auto;max-width:none;max-height:calc(100% - 70px)}
+  #panel{border-left:0;border-top:1px solid var(--line);overflow:visible;padding:12px 14px calc(30px + env(safe-area-inset-bottom));font-size:15px}
+  nav.tabs{position:sticky;top:0;background:var(--panel);z-index:2;flex-wrap:nowrap;overflow-x:auto}
+  nav.tabs button{flex:1 0 auto;padding:12px 8px;font-size:14px}
+  .btn{min-height:40px}
+  .seg{grid-template-columns:1fr}
+  input[type=range]{height:30px}
+  label.r span{font-size:13px}
+  dialog{width:92vw}
+}
+</style>
 </head>
-<body class="bg-ink-950 text-white antialiased selection:bg-accent selection:text-ink-950">
+<body>
+<div id="view">
+  <div id="bar"><button class="btn" id="theme"></button><button class="btn" id="reset">Restablecer vista</button></div>
+  <div id="card" hidden></div>
+  <div id="hud"></div>
+  <div id="tip">Doble clic: seleccionar y ver cotas · Clic derecho: editar medidas</div>
+</div>
 
-  <!-- ANNOUNCEMENNT BAR -->
-  <div class="bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 text-ink-950">
-    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-center gap-2 text-center text-[11px] sm:text-sm font-semibold tracking-wide">
-      <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
-      <span>Entrega en menos de 24hs · Permisos y seguros incluidos · Únicamente Zona Sur y Alrededores de Córdoba Capital</span>
+<aside id="panel">
+  <nav class="tabs">
+    <button class="on" data-tab="diseno">Diseño</button>
+    <button data-tab="medidas">Medidas</button>
+    <button data-tab="corte">Corte</button>
+    <button data-tab="armado">Armado</button>
+    <button data-tab="eval">Evaluación</button>
+  </nav>
+  <div id="warns"></div>
+
+  <section data-pane="diseno">
+    <h3>Tipo de patas</h3>
+    <div id="designs" class="seg"></div>
+    <h3>Visualización</h3>
+    <label class="c"><input type="checkbox" data-k="showBoard"> Mostrar tablero</label>
+    <label class="c"><input type="checkbox" data-k="showHW"> Mostrar herrajes</label>
+    <label class="c"><input type="checkbox" data-k="explode"> Vista explotada</label>
+    <label class="c"><input type="checkbox" data-k="transl"> Tablero translúcido</label>
+    <label class="c"><input type="checkbox" data-k="zone"> Zona estimada para piernas</label>
+    <label class="c"><input type="checkbox" data-k="dims"> Cotas generales</label>
+  </section>
+
+  <section data-pane="medidas" hidden>
+    <h3>Tablero</h3><div id="fb"></div>
+    <h3>Estructura</h3><div id="fs"></div>
+  </section>
+
+  <section data-pane="corte" hidden>
+    <h3>Tablas de pino compradas</h3>
+    <div class="row2">
+      <label class="muted">Largo de cada tabla (mm)<input type="number" data-k="bar" min="500" step="10"></label>
+      <label class="muted">Cantidad de tablas<input type="number" data-k="bars" min="1" step="1"></label>
+      <label class="muted">Espesor de corte (mm)<input type="number" data-k="kerf" min="0" step="0.5"></label>
+      <label class="muted">Sección de las tablas<input type="text" data-k="secc" placeholder="A confirmar"></label>
     </div>
-  </div>
+    <div id="cut"></div>
+  </section>
 
-  <!-- HEADER -->
-  <header class="sticky top-0 z-50 bg-ink-950/80 backdrop-blur-xl border-b border-ink-800/60">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 lg:h-20">
-        <a href="#top" class="flex items-center gap-3 group min-w-0">
-          <img src="https://i.postimg.cc/j5GSgZxm/Conte-Gen-Logo-2026.jpg" alt="Conte-Gen Logo" class="h-10 w-auto object-contain transition-transform hover:scale-105" />
-          <div class="leading-tight min-w-0">
-            <div class="font-black text-lg lg:text-xl tracking-tight">Conte-Gen</div>
-            <div class="text-[10px] lg:text-[11px] text-zinc-400 font-semibold tracking-[0.18em] uppercase whitespace-nowrap">Zona Sur y Alrededores · CBA</div>
-          </div>
-        </a>
-        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-300">
-          <a href="#servicios" class="hover:text-amber-500 transition-colors">Servicios</a>
-          <a href="#por-que" class="hover:text-amber-500 transition-colors">Por qué nosotros</a>
-          <a href="#cotizar" class="hover:text-amber-500 transition-colors">Cotizar</a>
-          <a href="#contacto" class="hover:text-amber-500 transition-colors">Contacto</a>
-        </nav>
-        <a href="#" data-whatsapp class="btn-shine hidden sm:inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-ink-950 font-semibold text-sm px-5 py-2.5 rounded-full transition-all hover:scale-105 shadow-glow-amber">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 1.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.683 5.461l-.999 3.648 3.805-.808zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-          WhatsApp
-        </a>
-        <button id="menuBtn" class="md:hidden p-2 text-zinc-300 hover:text-amber-500" aria-label="Abrir menú">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
-      </div>
-      <div id="mobileMenu" class="mobile-menu md:hidden">
-        <nav class="flex flex-col py-4 gap-1 text-zinc-200 font-medium border-t border-ink-800/60">
-          <a href="#servicios" class="px-3 py-3 hover:bg-ink-900 rounded-lg">Servicios</a>
-          <a href="#por-que" class="px-3 py-3 hover:bg-ink-900 rounded-lg">Por qué nosotros</a>
-          <a href="#cotizar" class="px-3 py-3 hover:bg-ink-900 rounded-lg">Cotizar</a>
-          <a href="#contacto" class="px-3 py-3 hover:bg-ink-900 rounded-lg">Contacto</a>
-          <a href="#" data-whatsapp class="mx-3 mt-2 inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-ink-950 font-semibold px-5 py-3 rounded-full">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 1.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.683 5.461l-.999 3.648 3.805-.808zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-            Escribinos por WhatsApp
-          </a>
-        </nav>
-      </div>
+  <section data-pane="armado" hidden>
+    <h3>Armado paso a paso</h3>
+    <div id="stepbox"></div>
+    <div class="steps" id="steps">
+      <button class="btn" data-go="prev">Anterior</button>
+      <button class="btn" data-go="all">Ver todo</button>
+      <button class="btn" data-go="next">Siguiente</button>
     </div>
-  </header>
+    <h3>Herrajes</h3>
+    <div id="hwlist"></div>
+  </section>
 
-  <main id="top">
+  <section data-pane="eval" hidden>
+    <div id="evalbox"></div>
+    <h3>Comparador</h3>
+    <div id="cmp"></div>
+  </section>
+</aside>
 
-    <!-- HERO -->
-    <section class="relative overflow-hidden bg-ink-950 bg-grid-amber bg-radial-amber">
-      <div class="absolute inset-0 bg-stripes-amber opacity-50 pointer-events-none"></div>
-      <div class="absolute inset-0 bg-noise pointer-events-none"></div>
-      <div class="absolute -top-20 -right-20 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 lg:pt-20 lg:pb-28">
-        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          <div class="lg:col-span-7">
-            <div class="reveal inline-flex items-center gap-2 bg-ink-900/80 border border-ink-800 rounded-full pl-2 pr-4 py-1.5 mb-6 backdrop-blur">
-              <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-amber-500/20 text-amber-500">
-                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
-              </span>
-              <span class="text-xs sm:text-sm font-medium text-zinc-300">Zona Sur y Alrededores · Córdoba Capital</span>
-            </div>
-            <h1 class="reveal reveal-delay-1 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.05] text-balance">
-              Alquiler de <span class="text-gradient-amber">contenedores</span> en Córdoba.
-              <span class="block text-zinc-300 font-extrabold mt-2 text-3xl sm:text-4xl lg:text-5xl xl:text-5xl">Rapidez y seriedad para tu obra.</span>
-            </h1>
-            <p class="reveal reveal-delay-2 mt-6 text-base sm:text-lg lg:text-xl text-zinc-300 max-w-2xl text-pretty">
-              Entrega en menos de 24 horas, contamos con <strong class="text-white">permisos municipales</strong> y <strong class="text-white">seguros incluidos</strong>. Sin sorpresas, sin demoras. Atendemos a constructoras, empresas, consorcios y particulares.
-            </p>
-            <div class="reveal reveal-delay-3 mt-8 flex flex-col sm:flex-row gap-3">
-              <a href="#" data-whatsapp class="btn-shine inline-flex items-center justify-center gap-3 bg-amber-500 hover:bg-amber-400 text-ink-950 font-bold text-base lg:text-lg px-7 py-4 rounded-full transition-all hover:scale-[1.03] shadow-glow-amber-lg">
-                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 1.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.683 5.461l-.999 3.648 3.805-.808zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                Solicitar contenedor por WhatsApp
-              </a>
-              <a href="#cotizar" class="inline-flex items-center justify-center gap-2 bg-ink-900/60 hover:bg-ink-900 border border-ink-800 hover:border-amber-500/50 text-white font-semibold text-base lg:text-lg px-7 py-4 rounded-full transition-all">
-                Cotizar online
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-              </a>
-            </div>
-            <ul class="reveal reveal-delay-4 mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-300">
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-amber-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Entrega rápida</li>
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-amber-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Permisos y seguros incluidos</li>
-              <li class="flex items-center gap-2"><svg class="w-4 h-4 text-amber-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Sin costos ocultos</li>
-            </ul>
-          </div>
+<dialog id="dlg">
+  <h3 id="dlgT" style="color:var(--ink);font-size:15px;margin-top:0"></h3>
+  <div id="dlgF"></div>
+  <p style="text-align:right;margin:12px 0 0"><button class="btn" id="dlgX">Cerrar</button></p>
+</dialog>
 
-          <!-- HERO VISUAL: imagen real del contenedor -->
-          <div class="lg:col-span-5 reveal reveal-delay-2">
-            <div class="relative float">
-              <!-- Glow amarillo de fondo -->
-              <div class="absolute -inset-4 bg-gradient-to-tr from-amber-500/30 via-amber-500/10 to-transparent rounded-[2rem] blur-2xl"></div>
-              <div class="relative bg-gradient-to-br from-ink-900 to-ink-800 border border-ink-700/60 rounded-3xl p-5 lg:p-6 shadow-card">
-                <div class="flex items-center justify-between mb-4">
-                  <div class="flex items-center gap-2"><span class="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></span><span class="text-[10px] font-bold tracking-widest text-amber-500 uppercase">Disponibilidad inmediata</span></div>
-                  <span class="text-[10px] font-mono text-zinc-500">CBA · ARG</span>
-                </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const fmt = n => Math.round(n).toLocaleString('es-AR');
+const V3 = THREE.Vector3;
 
-                <img src="https://i.postimg.cc/mgmR6BTf/Contenedor-Conte-Gen.png" alt="Contenedor Conte-Gen" class="relative z-10 w-full max-w-md mx-auto object-contain drop-shadow-[0_0_35px_rgba(245,158,11,0.3)] animate-float" />
+// ---------- Estado (mm) ----------
+const S = {preset:'X2', shape:'oval', n:2.2, L:2000, W:1200, T:40, R:150, H:740, s:60, inset:250, F:420,
+  hole:true, holeX:420, holeZ:420, holeD:70,
+  showBoard:true, showHW:false, explode:false, transl:false, zone:false, dims:false,
+  riostra:'no', fijRio:'tornillo', dH:0.35, dR:250, dS:60,
+  bar:6000, bars:1, kerf:3, secc:'', theme:'dark', step:0};
+let sel = null; // clave de la pieza seleccionada: 's3', 'b0', 'h5'
 
-                <div class="mt-5 grid grid-cols-3 gap-3 pt-5 border-t border-ink-700/60">
-                  <div><div class="text-amber-500 font-black text-xl lg:text-2xl">&lt; 24h</div><div class="text-[10px] text-zinc-400 uppercase tracking-wider mt-1">Entrega</div></div>
-                  <div><div class="text-amber-500 font-black text-xl lg:text-2xl">100%</div><div class="text-[10px] text-zinc-400 uppercase tracking-wider mt-1">Puntual</div></div>
-                  <div><div class="text-amber-500 font-black text-base lg:text-lg">Z.S+A.</div><div class="text-[10px] text-zinc-400 uppercase tracking-wider mt-1">Cobertura</div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+// Patas: X, A, U, E (caballetes), D (cuatro patas). tt = travesaño trasero alto; tb = trasero al piso
+const PRESETS = {
+  X2:{n:'Dos X',d:'Idea original. Centro libre.',legs:'X',ties:[]},
+  X2T:{n:'Dos X + trasero alto',d:'Travesaño atrás, bajo el tablero.',legs:'X',ties:['tt']},
+  X2B:{n:'Dos X + trasero al piso',d:'Travesaño atrás, junto al suelo.',legs:'X',ties:['tb']},
+  X2TB:{n:'Dos X + trasero doble',d:'Alto y bajo, solo atrás.',legs:'X',ties:['tt','tb']},
+  A:{n:'Patas en A',d:'Inclinadas hacia el centro.',legs:'A',ties:[]},
+  AT:{n:'Patas en A + trasero',d:'Con travesaño trasero alto.',legs:'A',ties:['tt']},
+  U:{n:'Patas en U',d:'Patas rectas con barra de pie.',legs:'U',ties:[]},
+  UT:{n:'Patas en U + trasero',d:'Con travesaño trasero alto.',legs:'U',ties:['tt']},
+  E:{n:'Caballetes',d:'Patas abiertas a lo largo.',legs:'E',ties:[]},
+  D:{n:'Cuatro patas',d:'Rectas en las esquinas.',legs:'D',ties:[]},
+  DT:{n:'Cuatro patas + trasero alto',d:'Refuerzo trasero bajo el tablero.',legs:'D',ties:['tt']},
+  DB:{n:'Cuatro patas + trasero bajo',d:'Refuerzo trasero junto al suelo.',legs:'D',ties:['tb']}
+};
+const STEPS = [
+  {t:'Cortar las piezas', x:'Corte todas las piezas según la pestaña Corte. Revise la escuadra de cada corte antes de seguir.', roles:['leg','apron','tie','brace']},
+  {t:'Armar las patas', x:'Arme cada X sobre el piso. Las dos patas se cruzan en el centro con media madera: cada una rebaja la mitad de su grosor en el cruce. Fíjelas con bulón, arandela y tuerca.', roles:['leg']},
+  {t:'Unir el travesaño superior', x:'El travesaño va entre los extremos superiores de las patas, a tope con ellas. Fíjelo con cola y dos tornillos por extremo, desde el lateral.', roles:['apron']},
+  {t:'Diagonales y travesaño trasero', x:'Cada diagonal va desde la pata hasta el travesaño, formando un triángulo. Fíjela con dos tornillos por extremo, con pre-taladrado. El travesaño trasero, si lo tiene, va igual.', roles:['tie','brace']},
+  {t:'Fijar el tablero desde abajo', x:'Dé vuelta el tablero sobre una superficie blanda y centre la estructura. Un tornillo fijo en el centro de cada travesaño y clips de expansión en los demás puntos.', roles:['apron','leg','tie','brace'], hw:true}
+];
+const BOARD_G = [
+  {t:'Forma del tablero', f:[['shape','Forma','sel',[['oval','Óvalo'],['rect','Rectángulo con puntas redondeadas']]],['n','Curvatura del óvalo (2 = elipse, 4 = cuadrado)',2,4,0.1,''],['R','Radio de puntas (solo rectángulo)',0,400,5,'mm']]},
+  {t:'Medidas del tablero', f:[['L','Largo',1500,2600,10,'mm'],['W','Ancho',800,1600,10,'mm'],['T','Grosor (provisional)',20,60,1,'mm']]},
+  {t:'Agujero para cables', f:[['hole','Mostrar agujero','chk'],['holeD','Diámetro',30,120,5,'mm'],['holeX','Posición a lo largo (X)',-900,900,5,'mm'],['holeZ','Posición a lo ancho (Z, + frente)',-600,600,5,'mm']],
+    extra:'<div class="row2"><button class="btn" data-corner="1,1">Frente +X</button><button class="btn" data-corner="-1,1">Frente −X</button><button class="btn" data-corner="1,-1">Fondo +X</button><button class="btn" data-corner="-1,-1">Fondo −X</button></div>'}
+];
+const STRUCT_G = [
+  {t:'Altura y secciones', f:[['H','Altura total',600,900,5,'mm'],['s','Sección de patas y travesaños',40,120,2,'mm']]},
+  {t:'Apoyo de las patas', f:[['inset','Separación de extremos al apoyo',150,500,5,'mm'],['F','Apertura de patas (media)',250,700,5,'mm']]},
+  {t:'Diagonales (triángulos bajo el tablero)', f:[['riostra','Diagonales','sel',[['no','Sin diagonales'],['int','Por dentro de las patas (zona de piernas)'],['ext','Por fuera de las patas'],['ambas','Por dentro y por fuera']]],
+    ['dH','Altura de apoyo en la pata (0,15 a 0,85)',0.15,0.85,0.05,''],['dR','Llegada al travesaño (0 = en la pata, 420 = centro)',0,600,10,'mm'],['dS','Sección de cada diagonal',40,120,2,'mm'],
+    ['fijRio','Fijación','sel',[['tornillo','Tornillos para madera'],['clavo','Clavos con cola (complemento)']]]],
+    extra:'<p class="muted">Cada diagonal forma un triángulo con la pata y el travesaño. La altura de apoyo cambia el ángulo; la llegada decide si las dos diagonales se juntan en el centro.</p>'}
+];
+function fieldHTML([k,l,a,b,c,u]){
+  if(a==='chk') return `<label class="c"><input type="checkbox" data-k="${k}"> ${l}</label>`;
+  if(a==='sel') return `<label class="r"><span>${l}</span><select data-k="${k}">${b.map(([v,t])=>`<option value="${v}">${t}</option>`).join('')}</select></label>`;
+  return `<label class="r"><span>${l}<b data-o="${k}"></b></span><input type="range" data-k="${k}" data-u="${u}" min="${a}" max="${b}" step="${c}"></label>`;
+}
+const groupsHTML = G => G.map(g => `<details open><summary>${g.t}</summary>${g.f.map(fieldHTML).join('')}${g.extra||''}</details>`).join('');
 
-    <!-- MARQUEE -->
-    <section class="bg-ink-900 border-y border-ink-800 overflow-hidden marquee-pause" aria-label="Servicios destacados">
-      <div class="flex whitespace-nowrap py-4 marquee">
-        <div class="flex items-center gap-12 px-6 text-zinc-400 font-bold text-sm uppercase tracking-widest">
-          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Escombros</span>
-          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Poda y limpieza</span>
-          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Residuos Industriales</span>
-          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Comerciales</span>
-          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Volquetes</span>
-          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Permisos municipales</span>
-          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Seguros incluidos</span>
-          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Atención híbrida IA + humano</span>
-        </div>
-        <div class="flex items-center gap-12 px-6 text-zinc-400 font-bold text-sm uppercase tracking-widest" aria-hidden="true">
-          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Escombros</span>
-          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Poda y limpieza</span>
-          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Residuos Industriales</span>
-          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Comerciales</span>
-          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Volquetes</span>
-          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Permisos municipales</span>
-          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Seguros incluidos</span>
-          <span class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Atención híbrida IA + humano</span>
-        </div>
-      </div>
-    </section>
+// ---------- Escena ----------
+const view = $('view');
+const renderer = new THREE.WebGLRenderer({antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.shadowMap.enabled = true;
+view.prepend(renderer.domElement);
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(40, 1, 0.01, 100);
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+scene.add(new THREE.HemisphereLight(0xffffff, 0x555a62, 0.9));
+const sun = new THREE.DirectionalLight(0xffffff, 0.9);
+sun.position.set(3, 5, 4); sun.castShadow = true;
+sun.shadow.mapSize.set(2048, 2048);
+Object.assign(sun.shadow.camera, {left:-3, right:3, top:3, bottom:-3, far:20});
+scene.add(sun);
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(20, 20), new THREE.ShadowMaterial({opacity:0.35}));
+floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; scene.add(floor);
+const grp = new THREE.Group(); grp.scale.setScalar(0.001); scene.add(grp);
+const dyn = [];
 
-    <!-- SERVICIOS -->
-    <section id="servicios" class="relative py-20 lg:py-28 bg-ink-950">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl mx-auto text-center mb-14 lg:mb-20">
-          <div class="reveal inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-500 text-xs font-bold tracking-widest uppercase rounded-full px-4 py-1.5 mb-5">
-            <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Nuestros servicios
-          </div>
-          <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-balance">
-            El contenedor indicado para <span class="text-gradient-amber">cada trabajo</span>.
-          </h2>
-          <p class="reveal reveal-delay-2 mt-5 text-zinc-400 text-base lg:text-lg max-w-2xl mx-auto text-pretty">
-            Trabajamos con constructoras, empresas, consorcios y particulares. Tocá el servicio que necesitás y completá el formulario con un solo clic.
-          </p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
-          <article class="reveal card-lift group bg-gradient-to-br from-ink-900 to-ink-900/40 border border-ink-800 rounded-3xl p-7 lg:p-8 relative overflow-hidden">
-            <div class="absolute -top-12 -right-12 w-40 h-40 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/20 transition-colors"></div>
-            <div class="relative">
-              <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-6 group-hover:bg-amber-500/20 transition-colors">
-                <svg class="w-7 h-7 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6M9 12h.01M15 12h.01"/></svg>
-              </div>
-              <h3 class="text-xl lg:text-2xl font-bold mb-3">Residuos de obra<br/><span class="text-amber-500">/ Escombros</span></h3>
-              <p class="text-zinc-400 text-sm lg:text-base leading-relaxed mb-6">Ideal para construcciones, refacciones y demoliciones. Contenedores reforzados para mampostería, hormigón, cerámicos y chatarra.</p>
-              <a href="#cotizar" data-service="Escombros" class="inline-flex items-center gap-1.5 text-amber-500 font-semibold text-sm group-hover:gap-3 transition-all cursor-pointer">
-                Consultar por este servicio
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-              </a>
-            </div>
-          </article>
-          <article class="reveal reveal-delay-1 card-lift group bg-gradient-to-br from-ink-900 to-ink-900/40 border border-ink-800 rounded-3xl p-7 lg:p-8 relative overflow-hidden">
-            <div class="absolute -top-12 -right-12 w-40 h-40 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/20 transition-colors"></div>
-            <div class="relative">
-              <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-6 group-hover:bg-amber-500/20 transition-colors">
-                <svg class="w-7 h-7 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 019.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6M19 21c0-3-1.85-5.36-5.08-6"/></svg>
-              </div>
-              <h3 class="text-xl lg:text-2xl font-bold mb-3">Limpieza de terrenos<br/><span class="text-amber-500">/ Poda</span></h3>
-              <p class="text-zinc-400 text-sm lg:text-base leading-relaxed mb-6">Perfecto para desmalezado, poda de árboles, limpieza de patios y terrenos. Retiramos restos verdes y voluminosos.</p>
-              <a href="#cotizar" data-service="Poda" class="inline-flex items-center gap-1.5 text-amber-500 font-semibold text-sm group-hover:gap-3 transition-all cursor-pointer">
-                Consultar por este servicio
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-              </a>
-            </div>
-          </article>
-          <article class="reveal reveal-delay-2 card-lift group bg-gradient-to-br from-ink-900 to-ink-900/40 border-2 border-amber-500/40 rounded-3xl p-7 lg:p-8 relative overflow-hidden">
-            <div class="absolute top-5 right-5 z-10">
-              <div class="badge-pulse flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-amber-400 text-ink-950 text-[10px] font-black tracking-widest uppercase px-3 py-1.5 rounded-full shadow-glow-amber">
-                <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4-6.5 4 2-7L2 9h7z"/></svg>
-                ¡Promo / Descuento!
-              </div>
-            </div>
-            <div class="absolute -top-12 -right-12 w-40 h-40 bg-amber-500/15 rounded-full blur-2xl group-hover:bg-amber-500/25 transition-colors"></div>
-            <div class="relative">
-              <div class="w-14 h-14 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center mb-6 group-hover:bg-amber-500/25 transition-colors">
-                <svg class="w-7 h-7 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V8l5 3V8l5 3V8l5 3v9M8 14v.01M12 14v.01M16 14v.01"/></svg>
-              </div>
-              <h3 class="text-xl lg:text-2xl font-bold mb-3">Residuos Industriales<br/><span class="text-amber-500">/ Comerciales</span></h3>
-              <p class="text-zinc-400 text-sm lg:text-base leading-relaxed mb-6">Las industrias acceden a <strong class="text-white">tarifas preferenciales</strong> gracias a nuestro sistema de <strong class="text-white">economía circular</strong> eso se traduce en mejores precios para vos.</p>
-              <a href="#cotizar" data-service="Residuos Industriales" class="inline-flex items-center gap-1.5 text-amber-500 font-semibold text-sm group-hover:gap-3 transition-all cursor-pointer">
-                Solicitar descuento industrial
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-              </a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+function pineTex(){
+  const c = document.createElement('canvas'); c.width = 256; c.height = 512;
+  const g = c.getContext('2d'); g.fillStyle = '#e2c18d'; g.fillRect(0, 0, 256, 512);
+  for (let i = 0; i < 90; i++) {
+    g.strokeStyle = `rgba(150,95,40,${Math.random() * 0.22})`;
+    g.lineWidth = Math.random() * 2 + 0.4;
+    g.beginPath(); const x0 = Math.random() * 256; g.moveTo(x0, 0);
+    for (let y = 0; y <= 512; y += 32) g.lineTo(x0 + Math.sin(y * 0.03 + i) * 3, y);
+    g.stroke();
+  }
+  return new THREE.CanvasTexture(c);
+}
+const pineMat = new THREE.MeshStandardMaterial({map: pineTex(), roughness: 0.7});
+const ghostMat = new THREE.MeshStandardMaterial({map: pineMat.map, roughness: 0.7, transparent: true, opacity: 0.12, depthWrite: false});
+const boardMat = new THREE.MeshStandardMaterial({color: 0xece4d2, roughness: 0.5});
+const ghostBoard = new THREE.MeshStandardMaterial({color: 0xece4d2, transparent: true, opacity: 0.12, depthWrite: false});
+const hwMat = new THREE.MeshStandardMaterial({color: 0x9a9a96, metalness: 0.8, roughness: 0.35});
+const zoneMat = new THREE.MeshBasicMaterial({color: 0x6f9a8c, transparent: true, opacity: 0.18, depthWrite: false});
+const dimMat = new THREE.LineBasicMaterial({color: 0x9aa3ad});
 
-    <!-- POR QUÉ -->
-    <section id="por-que" class="relative py-20 lg:py-28 bg-ink-900 border-y border-ink-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-12 gap-12 items-center">
-          <div class="lg:col-span-5">
-            <div class="reveal inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-500 text-xs font-bold tracking-widest uppercase rounded-full px-4 py-1.5 mb-5">
-              <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Por qué elegirnos
-            </div>
-            <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-balance">
-              En una obra, <span class="text-gradient-amber">el tiempo es dinero</span>. Y lo respetamos.
-            </h2>
-            <p class="reveal reveal-delay-2 mt-5 text-zinc-300 text-base lg:text-lg text-pretty">
-              Detrás de Conte-Gen hay un equipo local que conoce la Zona Sur y Alrededores de Córdoba y sus tiempos. Por eso llegamos cuando decimos que vamos a llegar.
-            </p>
-          </div>
-          <div class="lg:col-span-7 grid sm:grid-cols-2 gap-5">
-            <div class="reveal card-lift bg-ink-950 border border-ink-800 rounded-2xl p-6">
-              <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-4">
-                <svg class="w-6 h-6 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
-              <h3 class="text-lg font-bold mb-2">Entrega y retiro en menos de 24hs</h3>
-              <p class="text-zinc-400 text-sm leading-relaxed">Coordinamos la entrega y el retiro del contenedor en plazos cortos. Tu obra no se frena.</p>
-            </div>
-            <div class="reveal reveal-delay-1 card-lift bg-ink-950 border border-ink-800 rounded-2xl p-6">
-              <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-4">
-                <svg class="w-6 h-6 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
-              </div>
-              <h3 class="text-lg font-bold mb-2">Permisos municipales gestionados</h3>
-              <p class="text-zinc-400 text-sm leading-relaxed">Nos encargamos de los trámites en la Municipalidad de Córdoba. Vos te ocupás de la obra.</p>
-            </div>
-            <div class="reveal reveal-delay-2 card-lift bg-ink-950 border border-ink-800 rounded-2xl p-6">
-              <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-4">
-                <svg class="w-6 h-6 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="11" height="10" rx="2"/><path d="M8.5 5v3"/><circle cx="6.2" cy="13" r="1" fill="currentColor"/><circle cx="10.8" cy="13" r="1" fill="currentColor"/><line x1="5.7" y1="15.8" x2="11.3" y2="15.8"/><path d="M14.5 13h3"/><path d="M16 11.5l1.5 1.5-1.5 1.5"/><circle cx="20" cy="11" r="1.3"/><path d="M18 14.2c0-.9.7-1.7 1.7-1.7h.6c1 0 1.7.8 1.7 1.7V16"/></svg>
-              </div>
-              <h3 class="text-lg font-bold mb-2">Atención Híbrida Inmediata</h3>
-              <p class="text-zinc-400 text-sm leading-relaxed">Un <strong class="text-zinc-200">asistente virtual con IA</strong> procesa tu pedido al instante y, en segundos, pasa a un <strong class="text-zinc-200">asesor humano real</strong> que coordina la entrega. Velocidad sin perder el trato personal.</p>
-            </div>
-            <div class="reveal reveal-delay-3 card-lift bg-ink-950 border border-ink-800 rounded-2xl p-6">
-              <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-4">
-                <svg class="w-6 h-6 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-              </div>
-              <h3 class="text-lg font-bold mb-2">Cuidado de la vía pública</h3>
-              <p class="text-zinc-400 text-sm leading-relaxed">Trabajamos con seriedad: señalización, cuidado del frente y retiro prolijo. Cuidamos Córdoba como si fuera nuestra casa.</p>
-            </div>
-            <div class="reveal reveal-delay-4 sm:col-span-2 card-lift relative bg-gradient-to-r from-amber-500/15 via-amber-500/10 to-amber-500/5 border-2 border-amber-500/40 rounded-2xl p-6 lg:p-7 overflow-hidden">
-              <div class="absolute -right-10 -top-10 w-48 h-48 bg-amber-500/15 rounded-full blur-3xl"></div>
-              <div class="relative flex flex-col sm:flex-row items-start sm:items-center gap-5">
-                <div class="w-14 h-14 rounded-2xl bg-amber-500 flex items-center justify-center flex-shrink-0 shadow-glow-amber">
-                  <svg class="w-7 h-7 text-ink-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-                </div>
-                <div class="flex-1">
-                  <div class="flex items-center gap-2 mb-1.5 flex-wrap">
-                    <span class="text-[10px] font-black tracking-widest text-amber-500 uppercase">★ Destacado</span>
-                    <span class="text-amber-500/40">·</span>
-                    <span class="text-[10px] font-bold tracking-widest text-zinc-400 uppercase">Tranquilidad total</span>
-                  </div>
-                  <h3 class="text-lg lg:text-xl font-bold mb-1.5 text-white">Seguros Incluidos</h3>
-                  <p class="text-zinc-300 text-sm leading-relaxed">Cobertura total en vía pública y obra. Trabajás tranquilo sabiendo que tu Contenedor esta protegido ante cualquier eventualidad, sin costo extra.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+// ---------- Geometría ----------
+// Piezas: [punto A, punto B, papel, opciones]. Papel: leg | apron | tie | brace
+// Opciones: {cross:'L'|'R'} = media madera en el cruce de la X; {w} = sección propia
+function braces(p){
+  const P = PRESETS[p];
+  if (P.legs !== 'X' || S.riostra === 'no') return [];
+  const {s, inset, F, H, T, L} = S, xe = L/2 - inset, lt = H - T, out = [];
+  const sides = S.riostra === 'int' ? [-1] : S.riostra === 'ext' ? [1] : [-1, 1];
+  const h = S.dH * lt, reach = Math.min(S.dR, F);
+  for (const e of [-1, 1]) for (const sd of sides) {
+    const x = e * xe + sd * e * s;                  // por dentro (hacia el centro) o por fuera
+    for (const zs of [-1, 1])                       // una diagonal por cada pata
+      out.push([[x, h, zs * (F - 2*F*h/lt)], [x, lt - s/2, zs * (F - reach)], 'brace', {w: S.dS}]);
+  }
+  return out;
+}
+function members(p){
+  const {L,W,H,T,s,inset,F} = S, xe = L/2 - inset, lt = H - T, c = 60, zt = W/2 - 100, P = PRESETS[p], M = [];
+  // Travesaño entre las patas: termina a tope con las patas (no las atraviesa)
+  const X = x => { M.push([[x,0,-F],[x,lt,F],'leg',{cross:'L'}],[[x,0,F],[x,lt,-F],'leg',{cross:'R'}],[[x,lt-s/2,-F+s/2],[x,lt-s/2,F-s/2],'apron']); };
+  const A = x => M.push([[x,0,-F],[x,lt,-c],'leg'],[[x,0,F],[x,lt,c],'leg'],[[x,lt-s/2,-c+s/2],[x,lt-s/2,c-s/2],'apron']);
+  const U = x => M.push([[x,0,-F],[x,lt,-F],'leg'],[[x,0,F],[x,lt,F],'leg'],[[x,s/2,-F],[x,s/2,F],'tie'],[[x,lt-s/2,-F+s/2],[x,lt-s/2,F-s/2],'apron']);
+  const Tr = z => M.push([[-F,0,z],[-c,lt,z],'leg'],[[F,0,z],[c,lt,z],'leg'],[[-c,lt-s/2,z],[c,lt-s/2,z],'apron']);
+  const D = () => { for (const x of [-xe, xe]) for (const z of [-F, F]) M.push([[x,0,z],[x,lt,z],'leg']);
+                    for (const x of [-xe, xe]) M.push([[x,lt-s/2,-F+s/2],[x,lt-s/2,F-s/2],'apron']); };
+  if (P.legs === 'X') { X(-xe); X(xe); }
+  if (P.legs === 'A') { A(-xe); A(xe); }
+  if (P.legs === 'U') { U(-xe); U(xe); }
+  if (P.legs === 'E') { Tr(-zt); Tr(zt); }
+  if (P.legs === 'D') D();
+  const zb = P.legs === 'A' ? -c : -F;
+  if (P.ties.includes('tt')) M.push([[-xe, lt-s/2, zb],[xe, lt-s/2, zb],'tie']);
+  if (P.ties.includes('tb')) M.push([[-xe, s/2, -F],[xe, s/2, -F],'tie']);
+  braces(p).forEach(b => M.push(b));
+  return M;
+}
+const lenOf = (a, b) => Math.hypot(b[0]-a[0], b[1]-a[1], b[2]-a[2]);
 
-    <!-- HUB DE REDES SOCIALES (Rediseño limpio y ejecutivo) -->
-    <section class="relative py-20 lg:py-28 bg-ink-950 overflow-hidden">
-      <div class="absolute inset-0 bg-grid-amber opacity-30 pointer-events-none"></div>
-      <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Header de la sección -->
-        <div class="text-center max-w-2xl mx-auto mb-12 lg:mb-16">
-          <div class="reveal inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-500 text-xs font-bold tracking-widest uppercase rounded-full px-4 py-1.5 mb-5">
-            <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Nuestra comunidad
-          </div>
-          <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-balance">
-            Conectá con <span class="text-gradient-amber">Conte-Gen</span>
-          </h2>
-          <p class="reveal reveal-delay-2 mt-5 text-zinc-300 text-base lg:text-lg text-pretty">
-            Seguinos en redes para ver entregas, retiros y obras reales. Nuestra comunidad crece día a día.
-          </p>
-        </div>
+function holeOK(){
+  const r = S.holeD/2 + 15;
+  for (let i = 0; i < 16; i++) {
+    const th = i/16 * Math.PI*2;
+    if (!insideBoard(S.holeX + r*Math.cos(th), S.holeZ + r*Math.sin(th))) return false;
+  }
+  return true;
+}
+function insideBoard(x, z){
+  if (S.shape === 'rect') return Math.abs(x) <= S.L/2 && Math.abs(z) <= S.W/2;
+  return Math.pow(Math.abs(x)/(S.L/2), S.n) + Math.pow(Math.abs(z)/(S.W/2), S.n) <= 1;
+}
+function boardShape(){
+  const sh = new THREE.Shape();
+  if (S.shape === 'oval') {
+    const N = 180;
+    for (let i = 0; i <= N; i++) {
+      const th = i / N * Math.PI * 2, c = Math.cos(th), s_ = Math.sin(th);
+      const x = (S.L/2) * Math.sign(c) * Math.pow(Math.abs(c), 2/S.n);
+      const y = (S.W/2) * Math.sign(s_) * Math.pow(Math.abs(s_), 2/S.n);
+      if (i === 0) sh.moveTo(x, y); else sh.lineTo(x, y);
+    }
+  } else {
+    const r = Math.max(0, Math.min(S.R, S.W/2 - 1, S.L/2 - 1)), x = -S.L/2, y = -S.W/2, w = S.L, h = S.W;
+    sh.moveTo(x + r, y); sh.lineTo(x + w - r, y); sh.quadraticCurveTo(x + w, y, x + w, y + r);
+    sh.lineTo(x + w, y + h - r); sh.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+    sh.lineTo(x + r, y + h); sh.quadraticCurveTo(x, y + h, x, y + h - r);
+    sh.lineTo(x, y + r); sh.quadraticCurveTo(x, y, x + r, y);
+  }
+  if (S.hole) {
+    const p = new THREE.Path();                    // en la forma, y = -Z
+    p.absarc(S.holeX, -S.holeZ, S.holeD/2, 0, Math.PI * 2, true); sh.holes.push(p);
+  }
+  return sh;
+}
+function label(t, p){
+  const c = document.createElement('canvas'); c.width = 512; c.height = 96;
+  const g = c.getContext('2d'); g.font = '44px sans-serif'; g.fillStyle = '#e8e6df';
+  g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(t, 256, 48);
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({map: new THREE.CanvasTexture(c), depthTest: false}));
+  sp.scale.set(420, 79, 1); sp.position.copy(p); return sp;
+}
+function lineObj(pts){ return new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), dimMat); }
+function bar(P1, P2, wx, wz){
+  const d = P2.clone().sub(P1), len = d.length();
+  const m = new THREE.Mesh(new THREE.BoxGeometry(wx, len, wz), pineMat);
+  m.quaternion.setFromUnitVectors(new V3(0, 1, 0), d.clone().normalize());
+  m.position.copy(P1.clone().add(P2).multiplyScalar(0.5));
+  return m;
+}
 
-        <!-- Grid de tarjetas: Instagram · TikTok · WhatsApp -->
-        <div class="grid sm:grid-cols-3 gap-5 lg:gap-6">
+// Herrajes. Medidas estándar donde existen; el clip de expansión no tiene una medida única.
+const BULON_L = Math.ceil((S.s + 3.2 + 8) / 5) * 5;   // largo para atravesar el cruce con dos arandelas y la tuerca
+function hwText(u){
+  return {tornillo:`Tornillo para madera Ø5 × ${u.l} mm`, clip:'Clip de expansión (orientativo 30 × 8 × 14 mm)',
+    perno:`Bulón M8 × ${u.l} mm`, arandela:'Arandela plana M8 (16 × 1.6 mm)', tuerca:'Tuerca autoblocante M8 (altura 8 mm)',
+    clavo:`Clavo Ø3 × ${u.l} mm`}[u.t];
+}
 
-          <!-- Instagram -->
-          <a href="#" data-instagram
-             class="reveal group relative bg-ink-900 border border-ink-800 hover:border-amber-500/60 rounded-3xl p-7 lg:p-8 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-glow-amber-lg text-center overflow-hidden">
-            <div class="absolute -top-16 -right-16 w-44 h-44 bg-amber-500/5 rounded-full blur-2xl group-hover:bg-amber-500/15 transition-all duration-500"></div>
-            <div class="relative">
-              <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-fuchsia-600 via-pink-600 to-amber-500 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-500 shadow-lg">
-                <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-              </div>
-              <h3 class="text-lg font-bold text-white mb-1">Instagram</h3>
-              <p class="text-zinc-400 text-sm mb-6">@conte_gen</p>
-              <span class="inline-flex items-center gap-1.5 text-amber-500 font-semibold text-sm group-hover:gap-2.5 transition-all">
-                Seguir
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-              </span>
-            </div>
-          </a>
+function rebuild(){
+  dyn.forEach(o => grp.remove(o)); dyn.length = 0;
+  const M = members(S.preset), P = PRESETS[S.preset], lt = S.H - S.T, xe = S.L/2 - S.inset, center = new V3(0, S.H/2, 0);
+  const add = o => { grp.add(o); dyn.push(o); return o; };
+  const byKey = {};
+  const reg = (key, mesh) => { (byKey[key] = byKey[key] || []).push(mesh); return mesh; };
 
-          <!-- TikTok -->
-          <a href="https://www.tiktok.com/@conte.gen" data-tiktok
-             class="reveal reveal-delay-1 group relative bg-ink-900 border border-ink-800 hover:border-amber-500/60 rounded-3xl p-7 lg:p-8 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-glow-amber-lg text-center overflow-hidden">
-            <div class="absolute -top-16 -right-16 w-44 h-44 bg-amber-500/5 rounded-full blur-2xl group-hover:bg-amber-500/15 transition-all duration-500"></div>
-            <div class="relative">
-              <div class="tiktok-bg w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-500 shadow-lg border border-ink-700">
-                <svg class="w-8 h-8 text-white relative z-10" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005.8 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.84-.1z"/></svg>
-              </div>
-              <h3 class="text-lg font-bold text-white mb-1">TikTok</h3>
-              <p class="text-zinc-400 text-sm mb-6">@conte.gen</p>
-              <span class="inline-flex items-center gap-1.5 text-amber-500 font-semibold text-sm group-hover:gap-2.5 transition-all">
-                Seguir
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-              </span>
-            </div>
-          </a>
-
-          <!-- Facebook -->
-          <a href="https://www.facebook.com/contegencba/?locale=es_LA" target="_blank" rel="noopener"
-   class="reveal reveal-delay-2 group relative bg-ink-900 border border-ink-800 hover:border-amber-500/60 rounded-3xl p-7 lg:p-8 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-glow-amber-lg text-center overflow-hidden">
-  <div class="absolute -top-16 -right-16 w-44 h-44 bg-amber-500/5 rounded-full blur-2xl group-hover:bg-amber-500/15 transition-all duration-500"></div>
-  <div class="relative">
-    <div class="w-16 h-16 mx-auto rounded-2xl bg-[#1877F2] flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-amber-500 transition-all duration-500 shadow-lg">
-      <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-      </svg>
-    </div>
-    <h3 class="text-lg font-bold text-white mb-1">Facebook</h3>
-    <p class="text-zinc-400 text-sm mb-6">@contegencba</p>
-    <span class="inline-flex items-center gap-1.5 text-amber-500 font-semibold text-sm group-hover:gap-2.5 transition-all">
-      Visitanos
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-      </svg>
-    </span>
-  </div>
-</a>
-
-        </div>
-
-        <!-- Línea CTA inferior -->
-        <p class="reveal reveal-delay-3 text-center text-zinc-500 text-sm mt-10">
-          ¿Preferís hablar directo? <a href="#" data-whatsapp class="text-amber-500 font-semibold hover:text-amber-400 transition-colors">Tocá WhatsApp</a> y un asesor te atiende en minutos.
-        </p>
-      </div>
-    </section>
-
-    <!-- FORMULARIO + CONTACTO -->
-    <section id="cotizar" class="relative py-20 lg:py-28 bg-ink-950 scroll-mt-20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
-          <div class="reveal inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-500 text-xs font-bold tracking-widest uppercase rounded-full px-4 py-1.5 mb-5">
-            <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>Cotizá en 30 segundos
-          </div>
-          <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-balance">
-            Pedí tu <span class="text-gradient-amber">cotización</span> ahora.
-          </h2>
-          <p class="reveal reveal-delay-2 mt-5 text-zinc-300 text-base lg:text-lg text-pretty">
-            Completá el formulario y te respondemos por WhatsApp con precio y disponibilidad. Sin compromiso.
-          </p>
-        </div>
-        <div class="grid lg:grid-cols-5 gap-8">
-          <form id="quoteForm" class="reveal lg:col-span-3 bg-gradient-to-br from-ink-900 to-ink-900/40 border border-ink-800 rounded-3xl p-6 sm:p-8 lg:p-10 space-y-5">
-            <div class="grid sm:grid-cols-2 gap-5">
-              <div>
-                <label for="nombre" class="block text-sm font-semibold text-zinc-300 mb-2">Nombre y apellido</label>
-                <input type="text" id="nombre" name="nombre" required autocomplete="name" class="field w-full bg-ink-950 border border-ink-800 rounded-xl px-4 py-3 text-white placeholder-zinc-600" placeholder="Ej: Juan Pérez" />
-              </div>
-              <div>
-                <label for="telefono" class="block text-sm font-semibold text-zinc-300 mb-2">Teléfono / WhatsApp</label>
-                <input type="text" id="telefono" name="telefono" required inputmode="tel" autocomplete="tel" class="field w-full bg-ink-950 border border-ink-800 rounded-xl px-4 py-3 text-white placeholder-zinc-600" placeholder="Ej: 351 555 1234" />
-              </div>
-            </div>
-            <div class="grid sm:grid-cols-2 gap-5">
-              <div>
-                <label for="barrio" class="block text-sm font-semibold text-zinc-300 mb-2">Barrio</label>
-                <input type="text" id="barrio" name="barrio" required class="field w-full bg-ink-950 border border-ink-800 rounded-xl px-4 py-3 text-white placeholder-zinc-600" placeholder="Escribí tu barrio" />
-              </div>
-              <div>
-                <label for="ubicacion" class="block text-sm font-semibold text-zinc-300 mb-2">Ubicación / Dirección exacta <span class="text-zinc-500 font-normal text-xs">(para la entrega)</span></label>
-                <input type="text" id="ubicacion" name="ubicacion" required class="field w-full bg-ink-950 border border-ink-800 rounded-xl px-4 py-3 text-white placeholder-zinc-600" placeholder="Calle, número, referencias" />
-              </div>
-            </div>
-            <div>
-              <label for="tipo" class="block text-sm font-semibold text-zinc-300 mb-2">
-                Tipo de contenedor / residuo
-                <span class="text-amber-500/90 font-medium text-xs">(Descuento especial para residuos industriales)</span>
-              </label>
-              <select id="tipo" name="tipo" required class="field w-full bg-ink-950 border border-ink-800 rounded-xl px-4 py-3 text-white">
-                <option value="" disabled selected>¿Qué necesitás?</option>
-                <option>Escombros</option>
-                <option>Poda</option>
-                <option>Residuos Industriales</option>
-                <option>Residuos Comerciales</option>
-                <option>Mezcla</option>
-              </select>
-            </div>
-            <div>
-              <label for="mensaje" class="block text-sm font-semibold text-zinc-300 mb-2">Comentarios <span class="text-zinc-500 font-normal">(opcional)</span></label>
-              <textarea id="mensaje" name="mensaje" rows="3" class="field w-full bg-ink-950 border border-ink-800 rounded-xl px-4 py-3 text-white placeholder-zinc-600 resize-none" placeholder="Contanos brevemente: volumen estimado, fecha probable, observaciones..."></textarea>
-            </div>
-            <button type="submit" class="btn-shine w-full inline-flex items-center justify-center gap-3 bg-amber-500 hover:bg-amber-400 text-ink-950 font-bold text-base lg:text-lg px-6 py-4 rounded-full transition-all hover:scale-[1.01] shadow-glow-amber-lg">
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 1.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.683 5.461l-.999 3.648 3.805-.808zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-              Enviar por WhatsApp
-            </button>
-            <div class="flex items-start gap-2 bg-amber-500/8 border border-amber-500/25 rounded-xl p-3.5">
-              <svg class="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
-              <p class="text-xs text-zinc-300 leading-relaxed"><strong class="text-amber-500">Importante:</strong> operamos únicamente en <strong class="text-white">Zona Sur y Alrededores de Córdoba Capital</strong>. Al enviar, se abrirá WhatsApp con tu mensaje listo. No almacenamos ningún dato.</p>
-            </div>
-          </form>
-          <aside id="contacto" class="lg:col-span-2 space-y-5">
-            <div class="reveal card-lift bg-ink-900 border border-ink-800 rounded-3xl p-6">
-              <div class="flex items-start gap-4">
-                <div class="w-11 h-11 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0">
-                  <svg class="w-5 h-5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-                </div>
-                <div class="min-w-0 flex-1">
-                  <div class="text-xs font-bold tracking-widest text-amber-500 uppercase mb-1">WhatsApp Business</div>
-                  <a href="#" data-whatsapp class="text-white font-bold text-lg hover:text-amber-500 transition-colors block">+54 9 351 718 1817</a>
-                  <p class="text-zinc-500 text-xs mt-0.5">Respondemos en minutos</p>
-                  <div class="mt-3 pt-3 border-t border-ink-800/80">
-                    <div class="text-[10px] font-bold tracking-widest text-zinc-500 uppercase mb-1">Línea de respaldo</div>
-                    <a href="https://wa.me/5493515070676" target="_blank" rel="noopener" class="text-zinc-300 hover:text-amber-500 text-sm font-semibold transition-colors">+54 9 351 507 0676</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="reveal reveal-delay-1 card-lift bg-ink-900 border border-ink-800 rounded-3xl p-6">
-              <div class="flex items-start gap-4">
-                <div class="w-11 h-11 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0">
-                  <svg class="w-5 h-5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                </div>
-                <div class="min-w-0 flex-1">
-                  <div class="text-xs font-bold tracking-widest text-amber-500 uppercase mb-1">Email</div>
-                  <a href="mailto:contegen@gencontrol.com.ar" class="text-white font-semibold hover:text-amber-500 transition-colors block truncate">contegen@gencontrol.com.ar</a>
-                </div>
-              </div>
-            </div>
-            <div class="reveal reveal-delay-2 card-lift bg-ink-900 border border-ink-800 rounded-3xl p-6">
-              <div class="flex items-start gap-4">
-                <div class="w-11 h-11 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0">
-                  <svg class="w-5 h-5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                </div>
-                <div class="min-w-0 flex-1">
-                  <div class="text-xs font-bold tracking-widest text-amber-500 uppercase mb-1">Dirección</div>
-                  <div class="text-white font-semibold leading-tight">Villa Ballester 4063</div>
-                  <div class="text-zinc-400 text-sm">Barrio Carrara</div>
-                  <div class="mt-3 inline-flex items-center gap-1.5 bg-amber-500/10 border border-amber-500/30 rounded-full px-2.5 py-1">
-                    <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>
-                    <span class="text-amber-500 text-[10px] font-black tracking-widest uppercase">Operamos únicamente en Zona Sur y Alrededores</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="reveal reveal-delay-3 card-lift bg-ink-900 border border-ink-800 rounded-3xl p-6">
-              <div class="flex items-start gap-4">
-                <div class="w-11 h-11 rounded-xl bg-amber-500/10 flex items-center justify-center flex-shrink-0">
-                  <svg class="w-5 h-5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                </div>
-                <div>
-                  <div class="text-xs font-bold tracking-widest text-amber-500 uppercase mb-1">Horarios</div>
-                  <div class="text-white font-semibold text-sm">Lun a Vie · 8 a 18 hs</div>
-                  <div class="text-zinc-400 text-sm">Sáb · 8 a 13 hs</div>
-                </div>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="bg-ink-900 border-t border-ink-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-      <div class="grid md:grid-cols-12 gap-8">
-        <div class="md:col-span-5">
-          <a href="#top" class="inline-flex items-center gap-3 mb-4 group">
-            <img src="https://i.postimg.cc/j5GSgZxm/Conte-Gen-Logo-2026.jpg" alt="Conte-Gen Logo" class="h-10 w-auto object-contain transition-transform hover:scale-105" />
-            <div class="leading-tight">
-              <div class="font-black text-xl">Conte-Gen</div>
-              <div class="text-[10px] text-zinc-400 font-semibold tracking-[0.18em] uppercase">Zona Sur y Alrededores · CBA</div>
-            </div>
-          </a>
-          <p class="text-zinc-400 text-sm leading-relaxed max-w-sm">
-            Alquiler de contenedores para obras, limpieza e industria en Córdoba Capital. Seriedad, puntualidad, permisos municipales y seguros incluidos.
-          </p>
-          <div class="mt-5 inline-flex items-start gap-2.5 bg-ink-800/60 border border-ink-700 rounded-xl p-3 max-w-sm">
-            <svg class="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <div>
-              <div class="text-[10px] font-black tracking-widest text-amber-500 uppercase mb-0.5">Dirección</div>
-              <div class="text-zinc-300 text-sm leading-snug">Villa Ballester 4063, Barrio Carrara</div>
-            </div>
-          </div>
-
-          <div class="flex flex-col items-center gap-4 mt-8">
-            <p class="text-xs font-bold uppercase tracking-widest text-zinc-500">Seguinos en nuestras redes</p>
-            <div class="flex items-center gap-6">
-              <a href="https://www.instagram.com/conte.gen/" target="_blank" rel="noopener" class="text-amber-500 hover:text-amber-400 transition-all transform hover:scale-110" aria-label="Instagram de Conte-Gen">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-              </a>
-
-              <a href="https://www.facebook.com/contegencba/?locale=es_LA" target="_blank" rel="noopener" class="text-amber-500 hover:text-amber-400 transition-all transform hover:scale-110" aria-label="Facebook de Conte-Gen">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M9 8H7v3h2v9h3v-9h3l.5-3H12V6c0-.88.72-1 1-1h2V2h-3a4 4 0 0 0-4 4v2z"></path>
-                </svg>
-              </a>
-
-              <a href="https://www.tiktok.com/@conte.gen" target="_blank" rel="noopener" class="text-amber-500 hover:text-amber-400 transition-all transform hover:scale-110" aria-label="TikTok de Conte-Gen">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.01 1.62 4.14 1.01 1.15 2.41 1.86 3.94 2.06v3.29c-1.66-.01-3.26-.53-4.59-1.54-.15-.11-.29-.24-.44-.37v6.78c.03 2.65-.96 5.25-2.82 7.1-1.92 1.94-4.66 2.87-7.36 2.47-3.05-.42-5.7-2.67-6.55-5.63-1.04-3.53.49-7.44 3.73-9.11 1.1-.58 2.34-.88 3.59-.87v3.28c-1.84.05-3.62 1.07-4.48 2.72-.94 1.76-.7 3.99.6 5.48.96 1.13 2.41 1.77 3.89 1.72 1.93-.05 3.65-1.46 3.95-3.35.08-.5.11-1 .1-1.51V.02z"></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="md:col-span-3">
-          <h4 class="font-bold text-sm tracking-widest uppercase text-amber-500 mb-4">Navegación</h4>
-          <ul class="space-y-2.5 text-zinc-300 text-sm">
-            <li><a href="#servicios" class="hover:text-amber-500 transition-colors">Servicios</a></li>
-            <li><a href="#por-que" class="hover:text-amber-500 transition-colors">Por qué nosotros</a></li>
-            <li><a href="#cotizar" class="hover:text-amber-500 transition-colors">Cotizar</a></li>
-            <li><a href="#contacto" class="hover:text-amber-500 transition-colors">Contacto</a></li>
-          </ul>
-        </div>
-        <div class="md:col-span-4">
-          <h4 class="font-bold text-sm tracking-widest uppercase text-amber-500 mb-4">Zona de cobertura</h4>
-          <div class="bg-gradient-to-br from-amber-500/15 to-amber-500/5 border-2 border-amber-500/50 rounded-2xl p-4 mb-5 relative overflow-hidden">
-            <div class="absolute -right-6 -top-6 w-24 h-24 bg-amber-500/15 rounded-full blur-2xl"></div>
-            <div class="relative flex items-start gap-3">
-              <div class="w-9 h-9 rounded-xl bg-amber-500 flex items-center justify-center flex-shrink-0 shadow-glow-amber">
-                <svg class="w-5 h-5 text-ink-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div>
-                <div class="text-amber-500 font-black text-sm uppercase tracking-wider">Únicamente Zona Sur y Alrededores</div>
-                <p class="text-zinc-300 text-xs mt-1 leading-snug">Por logística, operamos <strong class="text-white">exclusivamente</strong> en la Zona Sur y Alrededores de Córdoba Capital.</p>
-              </div>
-            </div>
-          </div>
-          <div class="bg-ink-800/60 border border-ink-700 rounded-xl p-4">
-            <p class="text-zinc-300 text-sm leading-relaxed flex items-start gap-2.5">
-              <svg class="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Universitario de horizonte, Docta, Villa Libertador, Alto alberdi, Coronel Olmedo, Jose Ignacio Diaz y Barrio Carrara + zonas aledañas.</span>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="mt-10 pt-6 border-t border-ink-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-500">
-        <div>© <span id="year">2026</span> Conte-Gen · Alquiler de contenedores · Zona Sur y Alrededores, Córdoba Capital, Argentina</div>
-       <div class="flex items-center gap-4"><span class="text-zinc-500">Hecho por <a href="https://instagram.com/benjaa.rincon" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors duration-200">Benjamín Rincón</a> y <a href="https://instagram.com/santiii.rodriguezz._" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors duration-200">Santiago Rodriguez</a></span></div>
-</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- WHATSAPP FLOTANTE -->
-  <a href="#" data-whatsapp aria-label="Contactar por WhatsApp" class="fixed bottom-5 right-5 z-40 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-2xl shadow-emerald-500/30 transition-transform hover:scale-110 pulse-ring">
-    <svg class="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 1.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.683 5.461l-.999 3.648 3.805-.808zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-  </a>
-
-  <!-- SCRIPT -->
-  <script>
-    const CONFIG = {
-      whatsappNumber: '5493517181817',
-      whatsappDefaultMessage: 'Hola Conte-Gen, necesito un contenedor. ¿Me pasás info y disponibilidad?',
-      whatsappBackupNumber: '5493515070676',
-      instagramUrl: 'https://instagram.com/conte_gen',
-      tiktokUrl: 'https://www.tiktok.com/@conte.gen',
-      facebookUrl: 'https://www.facebook.com/contegencba/?locale=es_LA',
-      contactEmail: 'contegen@gencontrol.com.ar',
-    };
-
-    const waLink = (msg = CONFIG.whatsappDefaultMessage) =>
-      `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(msg)}`;
-
-    document.querySelectorAll('[data-whatsapp]').forEach(el => el.href = waLink());
-    document.querySelectorAll('[data-instagram]').forEach(el => el.href = CONFIG.instagramUrl);
-    document.querySelectorAll('[data-tiktok]').forEach(el => el.href = CONFIG.tiktokUrl);
-    document.querySelectorAll('[data-facebook]').forEach(el => el.href = CONFIG.facebookUrl);
-
-    const yearEl = document.getElementById('year');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-    mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
-
-    const form = document.getElementById('quoteForm');
-    form?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-      const nombre    = (data.get('nombre')    || '').toString().trim();
-      const telefono  = (data.get('telefono')  || '').toString().trim();
-      const barrio    = (data.get('barrio')    || '').toString().trim();
-      const ubicacion = (data.get('ubicacion') || '').toString().trim();
-      const tipo      = (data.get('tipo')      || '').toString().trim();
-      const mensaje   = (data.get('mensaje')   || '').toString().trim();
-      const text = [
-        '¡Hola Conte-Gen! Quiero cotizar un contenedor.',
-        '',
-        `• Nombre: ${nombre}`,
-        `• Teléfono / WhatsApp: ${telefono}`,
-        `• Barrio: ${barrio}`,
-        `• Ubicación / Dirección: ${ubicacion}`,
-        `• Tipo de contenedor: ${tipo}`,
-        mensaje ? `• Comentarios: ${mensaje}` : '',
-      ].filter(Boolean).join('\n');
-      window.open(waLink(text), '_blank', 'noopener');
+  M.forEach(([a, b, role, opt], i) => {
+    const A = new V3(...a), B = new V3(...b), mid = A.clone().add(B).multiplyScalar(0.5), d = B.clone().sub(A);
+    const ang = Math.round(Math.atan2(Math.hypot(d.x, d.z), Math.abs(d.y)) * 180 / Math.PI);
+    const ud = {kind:'struct', role, len: Math.round(d.length()), ang, a, b, id: i, key: 's' + i};
+    const offv = S.explode ? mid.clone().sub(center).multiplyScalar(0.6) : null;
+    let parts;
+    if (opt && opt.cross) {
+      // Media madera: cada pata pierde la mitad de su grosor en el cruce
+      const u = d.clone().normalize(), h = S.s/2, C = mid;
+      const p1 = C.clone().sub(u.clone().multiplyScalar(h)), p2 = C.clone().add(u.clone().multiplyScalar(h));
+      const cb = bar(p1, p2, S.s/2, S.s);
+      cb.position.x += opt.cross === 'L' ? -S.s/4 : S.s/4;
+      parts = [bar(A, p1, S.s, S.s), bar(p2, B, S.s, S.s), cb];
+    } else {
+      parts = [bar(A, B, (opt && opt.w) || S.s, (opt && opt.w) || S.s)];
+    }
+    parts.forEach(m => {
+      if (offv) m.position.add(offv);
+      m.castShadow = true; m.userData = ud; add(m); reg(ud.key, m);
     });
+  });
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  const geo = new THREE.ExtrudeGeometry(boardShape(), {depth: S.T, bevelEnabled: false, curveSegments: 32});
+  geo.rotateX(-Math.PI / 2);
+  const bd = add(new THREE.Mesh(geo, boardMat));
+  bd.position.y = S.H - S.T + (S.explode ? 250 : 0);
+  bd.castShadow = bd.receiveShadow = true;
+  bd.userData = {kind:'board', id: 0, key: 'b0'}; bd.visible = S.showBoard;
+  reg('b0', bd);
+  boardMat.transparent = S.transl; boardMat.opacity = S.transl ? 0.3 : 1; boardMat.depthWrite = !S.transl;
 
-    document.querySelectorAll('[data-service]').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const value = btn.getAttribute('data-service');
-        const tipoSelect = document.getElementById('tipo');
-        const cotizarSection = document.getElementById('cotizar');
-        const nombreField = document.getElementById('nombre');
-        if (tipoSelect) {
-          tipoSelect.value = value;
-          tipoSelect.classList.add('field-highlight');
-          setTimeout(() => tipoSelect.classList.remove('field-highlight'), 2200);
-        }
-        if (cotizarSection) cotizarSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        setTimeout(() => { if (nombreField && !nombreField.value) nombreField.focus({ preventScroll: true }); }, 700);
-      });
+  // Herrajes
+  const hw = []; let hid = 0;
+  const H_ = (mesh, t, l) => { mesh.userData = {kind:'hw', t, l, id: hid, key: 'h' + hid}; hid++; hw.push(mesh); reg(mesh.userData.key, mesh); return mesh; };
+  M.forEach(([a, b, role]) => {
+    if (role !== 'apron') return;
+    const len = lenOf(a, b), spots = [{t:0.5, k:'tornillo'}];
+    if (len > 900) spots.push({t:0.5 - 400/len, k:'clip'}, {t:0.5 + 400/len, k:'clip'});
+    spots.forEach(({t, k}) => {
+      const x = a[0] + (b[0]-a[0])*t, z = a[2] + (b[2]-a[2])*t;
+      if (k === 'tornillo') H_(new THREE.Mesh(new THREE.CylinderGeometry(2.5, 2.5, 25, 10), hwMat), 'tornillo', 25).position.set(x, lt + 12.5, z);
+      else H_(new THREE.Mesh(new THREE.BoxGeometry(30, 8, 14), hwMat), 'clip', 0).position.set(x, lt - 4, z);
     });
-  </script>
+  });
+  M.forEach(([a, b, role, opt]) => {
+    if (role !== 'brace') return;
+    const t = S.fijRio === 'clavo' ? 'clavo' : 'tornillo', l = t === 'clavo' ? 65 : 50, g = t === 'clavo' ? 1.5 : 2.5;
+    [a, b].forEach(p => {
+      const m = H_(new THREE.Mesh(new THREE.CylinderGeometry(g, g, l, 8), hwMat), t, l);
+      m.rotation.z = Math.PI / 2; m.position.set(p[0], p[1], p[2]);
+    });
+  });
+  if (P.legs === 'X') for (const x of [-xe, xe]) {
+    const bolt = H_(new THREE.Mesh(new THREE.CylinderGeometry(4, 4, BULON_L, 12), hwMat), 'perno', BULON_L);
+    bolt.rotation.z = Math.PI / 2; bolt.position.set(x, lt/2, 0);
+    for (const dx of [-1, 1]) {
+      const w = H_(new THREE.Mesh(new THREE.CylinderGeometry(8, 8, 1.6, 16), hwMat), 'arandela', 1.6);
+      w.rotation.z = Math.PI / 2; w.position.set(x + dx * (S.s/2 + 0.8), lt/2, 0);
+    }
+    const n = H_(new THREE.Mesh(new THREE.CylinderGeometry(7, 7, 8, 6), hwMat), 'tuerca', 8);
+    n.rotation.z = Math.PI / 2; n.position.set(x - (S.s/2 + 4), lt/2, 0);
+  }
+  hw.forEach(o => { o.visible = S.showHW && !S.explode; add(o); });
+
+  // Zona estimada para piernas (frente = +Z)
+  const innerW = 2*xe - S.s;
+  const zone = add(new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), zoneMat));
+  zone.scale.set(innerW, 700, 600); zone.position.set(0, 350, S.W/2 - 300); zone.visible = S.zone;
+  zone.add(new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(1, 1, 1)), new THREE.LineBasicMaterial({color: 0x6f9a8c})));
+
+  // Cotas generales
+  const hx = S.L/2, hz = S.W/2, top = S.H;
+  [lineObj([new V3(-hx, top+120, hz+150), new V3(hx, top+120, hz+150)]),
+   lineObj([new V3(hx+150, top+120, -hz), new V3(hx+150, top+120, hz)]),
+   lineObj([new V3(-hx-150, 0, hz), new V3(-hx-150, top, hz)]),
+   label(`Largo ${S.L} mm`, new V3(0, top+170, hz+150)),
+   label(`Ancho ${S.W} mm`, new V3(hx+150, top+170, 0)),
+   label(`Altura ${S.H} mm`, new V3(-hx-150, top/2, hz+90))
+  ].forEach(o => { o.visible = S.dims; add(o); });
+
+  // Selección: contorno verde en todas las partes y cotas específicas (una sola vez)
+  if (sel && byKey[sel]) byKey[sel].forEach((m, k) => addSel(m, m.userData, add, k === 0));
+  return M;
+}
+
+function addSel(mesh, u, add, withDims){
+  mesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(mesh.geometry), new THREE.LineBasicMaterial({color: 0x5fe38a})));
+  if (!withDims) return;
+  if (u.kind === 'struct') {
+    const A = new V3(...u.a), B = new V3(...u.b), dir = B.clone().sub(A).normalize();
+    let perp = new V3().crossVectors(dir, new V3(0, 1, 0));
+    if (perp.length() < 1e-3) perp = new V3(1, 0, 0);
+    perp.normalize();
+    const w = (u.role === 'brace' ? S.dS : S.s);
+    const off = perp.clone().multiplyScalar(w + 60);
+    add(lineObj([A.clone().add(off), B.clone().add(off)]));
+    add(label(`${u.len} mm`, A.clone().add(B).multiplyScalar(0.5).add(off).add(new V3(0, 45, 0))));
+    add(label(`Sección ${w} × ${w} mm`, A.clone().add(off.clone().multiplyScalar(0.5)).add(new V3(0, -45, 0))));
+    if (u.ang > 0) add(label(`${u.ang}° respecto a la vertical`, B.clone().add(off).add(new V3(0, 60, 0))));
+  } else if (u.kind === 'hw') {
+    add(label(hwText(u), mesh.position.clone().add(new V3(0, 90, 0))));
+  } else {
+    add(label(`Tablero ${fmt(S.L)} × ${fmt(S.W)} × ${S.T} mm`, new V3(0, S.H + 90, 0)));
+  }
+}
+
+// Resalta los pasos del tutorial; el resto queda fantasma
+function applyStep(){
+  const st = S.step ? STEPS[S.step - 1] : null;
+  dyn.forEach(o => {
+    if (!o.isMesh) return;
+    const u = o.userData;
+    if (u.kind === 'struct') o.material = !st || st.roles.includes(u.role) ? pineMat : ghostMat;
+    if (u.kind === 'board') o.material = !st || st.hw ? boardMat : ghostBoard;
+    if (u.kind === 'hw') o.visible = st ? !!st.hw : (S.showHW && !S.explode);
+  });
+}
+
+// ---------- Cálculos y advertencias ----------
+function interfHit(M){
+  const xe = S.L/2 - S.inset, half = xe, zMin = S.W/2 - 600 - S.s/2;
+  for (const [a, b] of M) for (let t = 0; t <= 1; t += 0.05) {
+    const x = a[0] + (b[0]-a[0])*t, y = a[1] + (b[1]-a[1])*t, z = a[2] + (b[2]-a[2])*t;
+    if (Math.abs(x) < half && z >= zMin && y < 700) return true;
+  }
+  return false;
+}
+function cutPlan(M){
+  const BL = S.bar, K = S.kerf;
+  const arr = M.map(([a, b]) => Math.round(lenOf(a, b))).sort((x, y) => y - x);
+  const over = arr.filter(l => l > BL), bars = [];
+  for (const l of arr) {
+    if (l > BL) continue;
+    let bar = bars.find(br => br.used + l + K <= BL + K);
+    if (!bar) { bar = {used:0, items:[]}; bars.push(bar); }
+    bar.used += l + K; bar.items.push(l);
+  }
+  return {bars, nb: bars.length, over, total: arr.reduce((t, l) => t + l, 0), BL};
+}
+function H_tip(){ return S.H / (2 * (PRESETS[S.preset].legs === 'E' ? S.W/2 - 100 : S.F)); }
+function validate(M){
+  const w = [], lt = S.H - S.T, xe = S.L/2 - S.inset, innerW = 2*xe - S.s, P = PRESETS[S.preset];
+  const tip = H_tip();
+  if (tip > 1.0) w.push({s:'alta', t:`Puede volcarse hacia un lado: la base es estrecha para esta altura (relación ${tip.toFixed(2)}, estimación).`});
+  else if (tip > 0.9) w.push({s:'media', t:'La base es algo estrecha: cuidado al apoyarse en un borde.'});
+  if (!P.ties.length && S.riostra === 'no') w.push({s:'media', t:'Sin travesaño trasero ni diagonales, la mesa puede moverse de lado o torcerse al empujarla. Pruebe con diagonales exteriores o un diseño con "trasero".'});
+  else w.push({s:'info', t:'Las diagonales y el travesaño trasero evitan el giro. Las exteriores no ocupan la zona de piernas.'});
+  if (P.legs === 'A' || P.legs === 'U') w.push({s:'info', t:'La unión de arriba de las patas recibe mucha carga: use cola y tornillos, no solo tornillos.'});
+  const outside = M.some(([a, b]) => (a[1] === 0 && !insideBoard(a[0], a[2])) || (b[1] === 0 && !insideBoard(b[0], b[2])));
+  if (outside) w.push({s:'alta', t:'Hay patas apoyadas fuera del contorno del tablero: reduzca la separación o la apertura.'});
+  if (S.F + S.s/2 > S.W/2) w.push({s:'media', t:'Las patas sobresalen del borde del tablero.'});
+  if (innerW < 900) w.push({s:'media', t:`Espacio libre entre estructuras de ${fmt(innerW)} mm: puede resultar incómodo para sentarse.`});
+  if (interfHit(M)) w.push({s:'alta', t:(S.riostra === 'int' || S.riostra === 'ambas') ? 'Las diagonales interiores quedan en la zona de piernas. Use exteriores, o suba el travesaño.' : 'Hay piezas en la zona de piernas (≈600 × 700 mm). Esto impide sentarse cómodamente.'});
+  if (lt < 300) w.push({s:'alta', t:'La altura libre bajo el tablero es insuficiente.'});
+  if (S.hole && !holeOK()) w.push({s:'alta', t:'El agujero para cables queda fuera del tablero o demasiado cerca del borde. Muévalo con las posiciones X y Z.'});
+  const cp = cutPlan(M);
+  if (cp.over.length) w.push({s:'alta', t:`Hay piezas más largas que la tabla comprada (${cp.over.join(', ')} mm). Hay que unir o comprar tablas más largas.`});
+  else if (cp.nb > S.bars) w.push({s:'media', t:`Faltan tablas: se necesitan ${cp.nb} de ${fmt(S.bar)} mm y tiene ${S.bars}.`});
+  w.push({s:'info', t:'El tablero se fija siempre desde abajo, con tornillo fijo en el centro y clips en los demás puntos. Nada visible desde arriba.'});
+  return w;
+}
+
+// ---------- Fichas ----------
+const NAMES = {leg:'Pata', apron:'Travesaño superior', tie:'Travesaño trasero', brace:'Diagonal'};
+const SVG = {
+  cruce:`<svg viewBox="0 0 200 120"><line x1="30" y1="110" x2="170" y2="10" stroke="#d9b67a" stroke-width="16"/><line x1="30" y1="10" x2="170" y2="110" stroke="#b08a52" stroke-width="16"/><rect x="88" y="52" width="24" height="16" fill="none" stroke="#5fe38a" stroke-width="2"/><text x="4" y="118">Media madera en el cruce</text></svg>`,
+  encastre:`<svg viewBox="0 0 200 120"><rect x="20" y="22" width="160" height="22" fill="#d9b67a"/><rect x="80" y="44" width="30" height="62" fill="#b08a52"/><rect x="86" y="30" width="18" height="16" fill="none" stroke="#5fe38a" stroke-width="2" stroke-dasharray="3 2"/><text x="4" y="118">Travesaño a tope con la pata</text></svg>`,
+  triangulo:`<svg viewBox="0 0 200 120"><polygon points="20,110 180,110 180,20" fill="none" stroke="#d9b67a" stroke-width="10"/><text x="4" y="118">Diagonal: pata, travesaño y piso</text></svg>`
+};
+function fichaHTML(u){
+  if (u.kind === 'board') return {t:'Tablero', x:`${fmt(S.L)} × ${fmt(S.W)} × ${S.T} mm. ${S.shape === 'oval' ? 'Forma ovalada' : 'Rectángulo con puntas redondeadas'}. Corte: trace el contorno con plantilla y corte con sierra de calar o router. Fijación: desde abajo, con tornillo fijo en el centro y clips separados unos 400 mm.`, svg:''};
+  if (u.kind === 'hw') {
+    const T = {tornillo:'Tornillo de rosca total, cabeza plana o avellanada. Se atornilla desde el travesaño hacia el tablero, sin pasarse del espesor.',
+      clip:'Permite que el tablero se mueva con la humedad. Se atornilla al travesaño y engancha el tablero sin apretar del todo. Compre el modelo que tenga su proveedor.',
+      perno:'Atraviesa el cruce de la X: va con arandela a cada lado y tuerca autoblocante. Se aprieta hasta que las patas queden firmes sin aplastar la madera.',
+      arandela:'Reparte la presión de la cabeza o la tuerca sobre la madera. Medida estándar M8 (DIN 125).',
+      tuerca:'Tuerca autoblocante M8, altura 8 mm (norma DIN 985). Se aprieta con llave hasta que sujete firme.',
+      clavo:'Complemento con cola. No reemplaza al tornillo en una pieza que recibe carga.'}[u.t];
+    return {t: hwText(u), x: T, svg:''};
+  }
+  const role = {leg:['Pata', 'Pieza inclinada o vertical. En la X, las dos patas se cruzan con media madera: cada una rebaja la mitad de su grosor en el centro.', SVG.cruce],
+    apron:['Travesaño superior', 'Va entre las patas, a tope con ellas, y bajo el tablero. Fíjelo con cola y tornillos desde el lateral.', SVG.encastre],
+    tie:['Travesaño trasero', 'Une las dos estructuras por atrás. Fíjelo con dos tornillos por extremo.', ''],
+    brace:['Diagonal', 'Sale de la pata a la altura elegida y llega al travesaño, formando un triángulo. Corte los extremos al ángulo que resulte y fíjelos con dos tornillos por extremo, con pre-taladrado.', SVG.triangulo]}[u.role];
+  return {t: `${role[0]} · ${u.role === 'brace' ? S.dS : S.s} × ${u.role === 'brace' ? S.dS : S.s} × ${u.len} mm`, x: role[1] + (u.ang > 0 ? ` Inclinación: ${u.ang}° respecto a la vertical. Ajuste la sierra a ${u.ang}° y verifique con una prueba.` : ''), svg: role[2]};
+}
+function showCard(u){
+  const f = fichaHTML(u);
+  $('card').innerHTML = `<h4>${f.t}</h4>${f.svg}<p>${f.x}</p><p style="text-align:right"><button class="btn" id="cardX">Cerrar</button></p>`;
+  $('card').hidden = false;
+  $('cardX').onclick = () => { sel = null; $('card').hidden = true; update(); };
+}
+
+function renderPanels(M, w){
+  $('warns').innerHTML = w.map(x => `<div class="adv ${x.s}">${x.t}</div>`).join('');
+  const cp = cutPlan(M), P = PRESETS[S.preset];
+  const groups = {};
+  for (const [a, b, role] of M) {
+    const L = Math.round(lenOf(a, b)), key = role + '|' + L;
+    groups[key] = groups[key] || {role, L, n: 0}; groups[key].n++;
+  }
+  const rows = Object.values(groups).sort((x, y) => y.L - x.L).map(g => `<tr><td>${NAMES[g.role]}</td><td>${g.n}</td><td>${fmt(g.L)}</td><td>${g.role === 'brace' ? S.dS : S.s} × ${g.role === 'brace' ? S.dS : S.s}</td></tr>`).join('');
+  const plan = cp.bars.map((b, i) => `<div class="muted">Tabla ${i+1}: ${b.items.map(fmt).join(' + ')} · sobra ${fmt(cp.BL + S.kerf - b.used)} mm</div>`).join('');
+  $('cut').innerHTML = `
+    <h3>Piezas de pino · ${P.n}</h3>
+    <p class="muted">Sección de patas y travesaños: ${S.s} × ${S.s} mm. ${S.secc ? 'Sección de tablas: ' + S.secc + '.' : 'Confirme que la sección comprada sea igual o mayor.'}</p>
+    <table><tr><th>Pieza</th><th>Cant.</th><th>Largo (mm)</th><th>Sección</th></tr>${rows}</table>
+    <h3>Aprovechamiento de tablas</h3>
+    <p>Consumo: <b>${fmt(cp.total)} mm</b>. Tablas necesarias: <b>${cp.nb}</b> de ${fmt(cp.BL)} mm (tiene ${S.bars}).</p>
+    ${plan}
+    <p class="muted">Lista preliminar, no de corte definitivo: no incluye tolerancias ni sobrantes de sierra.</p>`;
+
+  $('hwlist').innerHTML = `<table><tr><th>Herraje</th><th>Medida</th><th>Uso</th></tr>
+    <tr><td>Tornillo para madera</td><td>Ø5 × 25 mm (tablero) · Ø5 × 50 mm (diagonales)</td><td>Fijo central de cada travesaño, desde abajo; diagonales</td></tr>
+    <tr><td>Clip de expansión</td><td>Orientativo 30 × 8 × 14 mm</td><td>Resto de fijaciones del tablero</td></tr>
+    ${P.legs === 'X' ? `<tr><td>Bulón M8 + arandela plana M8 (16 × 1.6, DIN 125) + tuerca autoblocante M8 (altura 8, DIN 985)</td><td>Bulón M8 × ${BULON_L} mm</td><td>Cruce de cada X</td></tr>` : ''}</table>
+    <p class="muted">Toque dos veces una pieza o herraje en la vista 3D para ver su medida exacta y su ficha. Verifique las medidas comerciales en la tienda: los tornillos y clips se venden en medidas parecidas pero no idénticas.</p>`;
+
+  const interf = interfHit(M), tip = H_tip();
+  const status = cp.over.length ? 'Piezas que no entran en la tabla' : (cp.nb > S.bars ? 'Faltan tablas' : 'Entra en el material indicado');
+  $('evalbox').innerHTML = [
+    ['Estabilidad geométrica', tip > 1 ? 'Requiere validación' : 'Evaluada (geométrica)', `Relación altura / base: ${tip.toFixed(2)}.`],
+    ['Movimientos laterales', (P.ties.length || S.riostra !== 'no') ? 'Requiere validación profesional' : 'Advertencia: sin refuerzo', 'Depende de uniones, secciones reales y rigidez de la madera.'],
+    ['Concentración de esfuerzos', 'Pendiente', 'Requiere el detalle de las uniones.'],
+    ['Distribución del apoyo', 'Requiere validación profesional', 'Depende de la sección real y de la nivelación.'],
+    ['Zona de piernas', interf ? 'Interferencia detectada' : 'Evaluada: libre', 'Zona estimada de 600 × 700 mm; no considera la silla real.'],
+    ['Compatibilidad de uniones', 'Pendiente', 'Requiere medidas reales de la madera comprada.'],
+    ['Disponibilidad de material', status, `${fmt(cp.total)} mm de piezas; ${fmt(cp.BL * S.bars)} mm disponibles.`]
+  ].map(([t, s, d]) => `<div class="ev"><b>${t}</b><em>${s}</em><small>${d}</small></div>`).join('');
+
+  const cmp = Object.keys(PRESETS).map(p => {
+    const Md = members(p), c2 = cutPlan(Md);
+    return `<tr class="${p === S.preset ? 'cur' : ''}"><td>${PRESETS[p].n}</td><td>${Md.length}</td><td>${fmt(c2.total)}</td><td>${c2.nb}</td><td>${interfHit(Md) ? 'Interfiere' : 'Libre'}</td></tr>`;
+  }).join('');
+  $('cmp').innerHTML = `<table><tr><th>Diseño</th><th>Piezas</th><th>mm</th><th>Tablas</th><th>Piernas</th></tr>${cmp}</table>`;
+
+  const st = S.step ? STEPS[S.step - 1] : null;
+  const extra = st && st.roles.includes('brace') && S.riostra === 'no' && !P.ties.length ? '<p class="muted">Este diseño no tiene diagonales ni travesaño trasero: salte este paso.</p>' : '';
+  $('stepbox').innerHTML = st
+    ? `<div class="ev"><b>Paso ${S.step} de ${STEPS.length} · ${st.t}</b><small>${st.x}</small>${extra}</div>`
+    : `<div class="ev"><b>Vista completa</b><small>Elija un paso para ver solo las piezas que intervienen.</small></div>`;
+  document.querySelectorAll('#designs button').forEach(b => b.classList.toggle('on', b.dataset.d === S.preset));
+  $('hud').textContent = `${P.n} · ${fmt(S.L)} × ${fmt(S.W)} × ${S.H} mm · provisional`;
+}
+
+function sync(){
+  document.querySelectorAll('[data-k]').forEach(el => {
+    const k = el.dataset.k, v = S[k];
+    if (el.type === 'checkbox') el.checked = !!v; else if (document.activeElement !== el) el.value = v;
+    const o = document.querySelector(`[data-o="${k}"]`);
+    if (o) o.textContent = v + (el.dataset.u ? ' ' + el.dataset.u : '');
+  });
+}
+function update(){
+  sync();
+  const M = rebuild(); applyStep();
+  renderPanels(M, validate(M));
+}
+
+// ---------- Interacción ----------
+document.addEventListener('input', e => {
+  const el = e.target, k = el.dataset && el.dataset.k;
+  if (!k) return;
+  S[k] = el.type === 'checkbox' ? el.checked : (el.type === 'range' || el.type === 'number') ? +el.value : el.value;
+  update();
+});
+document.addEventListener('click', e => {
+  const c = e.target.dataset && e.target.dataset.corner;
+  if (!c) return;
+  const [sx, sz] = c.split(',').map(Number);
+  S.holeX = sx * 420; S.holeZ = sz * 420; update();
+});
+$('designs').innerHTML = Object.entries(PRESETS).map(([k, p]) => `<button data-d="${k}"><b>${p.n}</b><small>${p.d}</small></button>`).join('');
+$('designs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { S.preset = b.dataset.d; update(); } });
+$('fb').innerHTML = groupsHTML(BOARD_G);
+$('fs').innerHTML = groupsHTML(STRUCT_G);
+$('steps').addEventListener('click', e => {
+  const g = e.target.dataset && e.target.dataset.go;
+  if (!g) return;
+  if (g === 'all') S.step = 0;
+  else if (g === 'next') S.step = Math.min(STEPS.length, S.step + 1);
+  else S.step = Math.max(0, S.step - 1);
+  update();
+});
+document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => {
+  document.querySelectorAll('nav.tabs button').forEach(x => x.classList.toggle('on', x === b));
+  document.querySelectorAll('section[data-pane]').forEach(s => s.hidden = s.dataset.pane !== b.dataset.tab);
+});
+
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
+function pick(e){
+  const r = renderer.domElement.getBoundingClientRect();
+  ndc.set((e.clientX - r.left)/r.width*2 - 1, -(e.clientY - r.top)/r.height*2 + 1);
+  ray.setFromCamera(ndc, camera);
+  const hits = ray.intersectObjects(dyn.filter(o => o.isMesh && o.visible && o.userData.kind));
+  return hits.length ? hits[0].object.userData : null;
+}
+function keyOf(u){ return u.key; }
+function onDbl(e){
+  const u = pick(e);
+  if (u) { sel = keyOf(u); update(); showCard(u); }
+  else { sel = null; $('card').hidden = true; update(); }
+}
+function openDlg(kind){
+  $('dlgT').textContent = kind === 'board' ? 'Medidas del tablero' : 'Medidas de la estructura';
+  $('dlgF').innerHTML = groupsHTML(kind === 'board' ? BOARD_G : STRUCT_G);
+  sync(); $('dlg').showModal();
+}
+$('dlgX').onclick = () => $('dlg').close();
+$('dlgF').addEventListener('click', e => { if (e.target.dataset.corner) { const [sx, sz] = e.target.dataset.corner.split(',').map(Number); S.holeX = sx*420; S.holeZ = sz*420; update(); } });
+
+// Doble clic con ratón; doble toque en pantallas táctiles
+let lastType = 'mouse', down = null, lastTap = {t:0, x:0, y:0};
+renderer.domElement.addEventListener('pointerdown', e => { lastType = e.pointerType; down = {x: e.clientX, y: e.clientY}; });
+renderer.domElement.addEventListener('pointerup', e => {
+  if (e.pointerType !== 'touch' || !down || Math.hypot(e.clientX - down.x, e.clientY - down.y) > 10) return;
+  const now = Date.now();
+  if (now - lastTap.t < 350 && Math.hypot(e.clientX - lastTap.x, e.clientY - lastTap.y) < 30) { lastTap.t = 0; onDbl(e); }
+  else lastTap = {t: now, x: e.clientX, y: e.clientY};
+});
+renderer.domElement.addEventListener('dblclick', e => { if (lastType !== 'touch') onDbl(e); });
+renderer.domElement.addEventListener('contextmenu', e => { e.preventDefault(); const u = pick(e); openDlg(u && u.kind === 'board' ? 'board' : 'struct'); });
+renderer.domElement.addEventListener('pointermove', e => { renderer.domElement.style.cursor = pick(e) ? 'pointer' : 'grab'; });
+
+// Cámara
+let goal = null;
+function resetCam(){
+  const d = Math.max(S.L, S.W) * 0.0022, t = new V3(0, S.H * 0.0004, 0);
+  goal = {p: new V3(t.x + 0.7*d, t.y + 0.8*d, t.z + 0.7*d), t};
+}
+$('reset').onclick = resetCam;
+controls.addEventListener('start', () => goal = null);
+
+function setTheme(t){
+  S.theme = t;
+  document.body.classList.toggle('light', t === 'light');
+  scene.background = new THREE.Color(t === 'light' ? '#eeece7' : '#0f1114');
+  $('theme').textContent = t === 'light' ? 'Modo oscuro' : 'Modo claro';
+}
+$('theme').onclick = () => setTheme(S.theme === 'dark' ? 'light' : 'dark');
+
+function resize(){
+  const r = view.getBoundingClientRect(), h = Math.max(r.height, 300);
+  renderer.setSize(r.width, h, false);
+  renderer.domElement.style.height = h + 'px';
+  camera.aspect = r.width / h; camera.updateProjectionMatrix();
+}
+window.addEventListener('resize', resize);
+resize(); setTheme('dark'); update();
+camera.position.set(2.6, 2.6, 2.6); controls.target.set(0, 0.37, 0);
+(function loop(){
+  requestAnimationFrame(loop);
+  if (goal) {
+    camera.position.lerp(goal.p, 0.12); controls.target.lerp(goal.t, 0.12);
+    if (camera.position.distanceTo(goal.p) < 0.002) goal = null;
+  }
+  controls.update(); renderer.render(scene, camera);
+})();
+</script>
 </body>
 </html>
